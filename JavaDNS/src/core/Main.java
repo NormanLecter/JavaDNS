@@ -18,9 +18,8 @@ public class Main {
 			BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Wprowadz domene albo adres IP... ");
             String domain = in.readLine();
-            System.out.println("Wczytalem i przygotowuje do wyslania... " + domain);
             sendbyte = domain.getBytes();
-			DatagramPacket sender = new DatagramPacket(sendbyte, sendbyte.length, address, 1309); // spakowanie wszystkiego do wyslania
+			DatagramPacket sender = new DatagramPacket(sendbyte, sendbyte.length, address, 53); // spakowanie wszystkiego do wyslania
 			client.send(sender);
             
 			//ODBIERANIE

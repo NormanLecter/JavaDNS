@@ -5,8 +5,11 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		
-		System.out.println("Java DNS client.");
-		
+		try{
+			
+		}
+	catch(Exception e){
+		System.out.println(e);
+	}
 	}
 }

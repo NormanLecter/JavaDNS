@@ -8,9 +8,6 @@ public class Main {
 	public static void main(String args[]) {
 		boolean serverRunning = true;
 		
-		String s2 = "1 www.google.com";
-		System.out.println(getNameOfSite(s2));
-		
 	    try {
 	    	DatagramSocket server = new DatagramSocket(53);
 	    	
@@ -22,58 +19,76 @@ public class Main {
 	            server.receive(receiver);
 	            
 	            String str = new String(receiver.getData());
-	            String s = str.trim();
-	            
-	            System.out.println("odebralem: " + s);
-	            int levelOfDomain = getLevelOfDomain(s);
-	            String adress = getAdress(s);
-	            String domain = getDomain(s);
+	            String adress = getAdress(str);
+	            int levelOfDomain = getLevelOfDomain(str);
 	            
 	            InetAddress addr = receiver.getAddress();
 	            int port = receiver.getPort();
 	            
+	            //TODO podlaczyc jsony.
 	            String first[] = {"org", "pl"};
 	            String org[] = {"joemonster.org", "wikipedia.org"};
 	            String pl[] = {"wolniak.pl", "osak.pl"};
-
 	            
 	            switch(levelOfDomain) {
 	            case 0: {
 	            	// sprawdzanie czy istnieje taka .domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
+	            	String domain = getDomain(str);
+	            	String msg = "";
 	            	
-	            	levelOfDomain++;
-	            	String msg = getMessage(levelOfDomain, adress);
+	            	boolean sent = false;
+	            	for(String s : first) {
+	            		if(s.equals(domain)) {
+	    	            	levelOfDomain++;
+	    	            	msg = getMessage(levelOfDomain, adress);
+	    	            	sent = true;
+	            		}
+	            	}
+	            	
+	            	if(!sent) {
+    	            	msg = getMessage(-1, adress);
+	            	}
+
+            		sendbyte = msg.getBytes();
+                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    server.send(sender);
+
 	            	break; }
 	            	
 	            case 2: {
 	            	// sprawdzenie czy istnieje taka strona.domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
-	            	levelOfDomain++;
-	            	String msg = getMessage(levelOfDomain, adress);
+	            	String nameOfSite = getNameOfSite(str);
+	            	String msg = "";
+	            	
+	            	boolean sent = false;
+	            	for(String s : org) {
+	            		if(s.equals(nameOfSite)) {
+	    	            	levelOfDomain++;
+	    	            	msg = getMessage(levelOfDomain, adress);
+	    	            	sent = true;
+	            		}
+	            	}
+	            	
+	            	if(!sent) {
+    	            	msg = getMessage(-1, adress);
+	            	}      
+
+            		sendbyte = msg.getBytes();
+                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    server.send(sender);
 	            	break; }
 	            	
 	            case 4: {
-	            	// odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
-	            	levelOfDomain++;
-	            	String msg = getMessage(0, adress);
+	            	// TODO odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
+	            	
+	    	        levelOfDomain++;
+	    	        String msg = getMessage(levelOfDomain, "26.07.19.96");
+
+            		sendbyte = msg.getBytes();
+                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    server.send(sender);
 	            	break; }
 	            }
-	            
-	            /*
-	            for(int i = 0 ; i < first.length; i++) {
-	            	if(s.equals(ip[i])) {
-	            		sendbyte = name[i].getBytes();
-	                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
-	                    server.send(sender);
-	                    break;
-	                } else if(s.equals(name[i])) {
-	                	sendbyte = ip[i].getBytes();
-	                    DatagramPacket sender = new DatagramPacket(sendbyte, sendbyte.length, addr, port);
-	                    server.send(sender);
-	                    break;
-	                }   
-	            }         
-	            break; 
-	            */  
 	       }
 	    } catch(Exception e) {
 	    	System.out.println(e);

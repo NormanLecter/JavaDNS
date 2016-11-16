@@ -2,10 +2,16 @@ package core;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import core.WebsiteDataProto.*;
+
 
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		websiteData ONET = websiteData.newBuilder().setIpAddress("192.168.1.2").setName("Onet").setLevelOfDomain(0).build(); // test protoBuffer
+	
+		// Z GITA CALY KATALOG COM.GOOGLE.PROTOBUF : package com.google.protobuf
 		
 		try{
 			// WYSYLANIE

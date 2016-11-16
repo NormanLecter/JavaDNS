@@ -3,10 +3,11 @@
 
 package core;
 
+
 public final class WebsiteDataProto {
   private WebsiteDataProto() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
@@ -33,13 +34,18 @@ public final class WebsiteDataProto {
         getNameBytes();
 
     /**
-     * <code>required int32 ipAddress = 2;</code>
+     * <code>required string ipAddress = 2;</code>
      */
     boolean hasIpAddress();
     /**
-     * <code>required int32 ipAddress = 2;</code>
+     * <code>required string ipAddress = 2;</code>
      */
-    int getIpAddress();
+    java.lang.String getIpAddress();
+    /**
+     * <code>required string ipAddress = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getIpAddressBytes();
 
     /**
      * <code>required int32 levelOfDomain = 3;</code>
@@ -58,12 +64,12 @@ public final class WebsiteDataProto {
       // @@protoc_insertion_point(message_implements:core.websiteData)
       websiteDataOrBuilder {
     // Use websiteData.newBuilder() to construct.
-    private websiteData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private websiteData(google.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private websiteData() {
       name_ = "";
-      ipAddress_ = 0;
+      ipAddress_ = "";
       levelOfDomain_ = 0;
     }
 
@@ -79,7 +85,7 @@ public final class WebsiteDataProto {
       this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          google.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -101,9 +107,10 @@ public final class WebsiteDataProto {
               name_ = bs;
               break;
             }
-            case 16: {
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              ipAddress_ = input.readInt32();
+              ipAddress_ = bs;
               break;
             }
             case 24: {
@@ -169,7 +176,7 @@ public final class WebsiteDataProto {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+            google.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
         return b;
@@ -179,18 +186,45 @@ public final class WebsiteDataProto {
     }
 
     public static final int IPADDRESS_FIELD_NUMBER = 2;
-    private int ipAddress_;
+    private volatile java.lang.Object ipAddress_;
     /**
-     * <code>required int32 ipAddress = 2;</code>
+     * <code>required string ipAddress = 2;</code>
      */
     public boolean hasIpAddress() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 ipAddress = 2;</code>
+     * <code>required string ipAddress = 2;</code>
      */
-    public int getIpAddress() {
-      return ipAddress_;
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          ipAddress_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string ipAddress = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            google.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LEVELOFDOMAIN_FIELD_NUMBER = 3;
@@ -233,10 +267,10 @@ public final class WebsiteDataProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        google.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, ipAddress_);
+        google.GeneratedMessageV3.writeString(output, 2, ipAddress_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, levelOfDomain_);
@@ -250,14 +284,13 @@ public final class WebsiteDataProto {
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        size += google.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, ipAddress_);
+        size += google.GeneratedMessageV3.computeStringSize(2, ipAddress_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
+        size += google.CodedOutputStream
           .computeInt32Size(3, levelOfDomain_);
       }
       size += unknownFields.getSerializedSize();
@@ -284,8 +317,8 @@ public final class WebsiteDataProto {
       }
       result = result && (hasIpAddress() == other.hasIpAddress());
       if (hasIpAddress()) {
-        result = result && (getIpAddress()
-            == other.getIpAddress());
+        result = result && getIpAddress()
+            .equals(other.getIpAddress());
       }
       result = result && (hasLevelOfDomain() == other.hasLevelOfDomain());
       if (hasLevelOfDomain()) {
@@ -309,7 +342,7 @@ public final class WebsiteDataProto {
       }
       if (hasIpAddress()) {
         hash = (37 * hash) + IPADDRESS_FIELD_NUMBER;
-        hash = (53 * hash) + getIpAddress();
+        hash = (53 * hash) + getIpAddress().hashCode();
       }
       if (hasLevelOfDomain()) {
         hash = (37 * hash) + LEVELOFDOMAIN_FIELD_NUMBER;
@@ -343,39 +376,39 @@ public final class WebsiteDataProto {
     }
     public static core.WebsiteDataProto.websiteData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static core.WebsiteDataProto.websiteData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static core.WebsiteDataProto.websiteData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static core.WebsiteDataProto.websiteData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static core.WebsiteDataProto.websiteData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static core.WebsiteDataProto.websiteData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return google.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -401,7 +434,7 @@ public final class WebsiteDataProto {
      * Protobuf type {@code core.websiteData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        google.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:core.websiteData)
         core.WebsiteDataProto.websiteDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -427,7 +460,7 @@ public final class WebsiteDataProto {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (google.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -435,7 +468,7 @@ public final class WebsiteDataProto {
         super.clear();
         name_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        ipAddress_ = 0;
+        ipAddress_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         levelOfDomain_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -523,7 +556,9 @@ public final class WebsiteDataProto {
           onChanged();
         }
         if (other.hasIpAddress()) {
-          setIpAddress(other.getIpAddress());
+          bitField0_ |= 0x00000002;
+          ipAddress_ = other.ipAddress_;
+          onChanged();
         }
         if (other.hasLevelOfDomain()) {
           setLevelOfDomain(other.getLevelOfDomain());
@@ -597,7 +632,7 @@ public final class WebsiteDataProto {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
+              google.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
           return b;
@@ -641,34 +676,78 @@ public final class WebsiteDataProto {
         return this;
       }
 
-      private int ipAddress_ ;
+      private java.lang.Object ipAddress_ = "";
       /**
-       * <code>required int32 ipAddress = 2;</code>
+       * <code>required string ipAddress = 2;</code>
        */
       public boolean hasIpAddress() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 ipAddress = 2;</code>
+       * <code>required string ipAddress = 2;</code>
        */
-      public int getIpAddress() {
-        return ipAddress_;
+      public java.lang.String getIpAddress() {
+        java.lang.Object ref = ipAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ipAddress_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>required int32 ipAddress = 2;</code>
+       * <code>required string ipAddress = 2;</code>
        */
-      public Builder setIpAddress(int value) {
-        bitField0_ |= 0x00000002;
+      public com.google.protobuf.ByteString
+          getIpAddressBytes() {
+        java.lang.Object ref = ipAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              google.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ipAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string ipAddress = 2;</code>
+       */
+      public Builder setIpAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         ipAddress_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 ipAddress = 2;</code>
+       * <code>required string ipAddress = 2;</code>
        */
       public Builder clearIpAddress() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        ipAddress_ = 0;
+        ipAddress_ = getDefaultInstance().getIpAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string ipAddress = 2;</code>
+       */
+      public Builder setIpAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        ipAddress_ = value;
         onChanged();
         return this;
       }
@@ -728,22 +807,22 @@ public final class WebsiteDataProto {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<websiteData>
-        PARSER = new com.google.protobuf.AbstractParser<websiteData>() {
+    @java.lang.Deprecated public static final google.Parser<websiteData>
+        PARSER = new google.AbstractParser<websiteData>() {
       public websiteData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          google.CodedInputStream input,
+          google.ExtensionRegistryLite extensionRegistry)
+          throws google.InvalidProtocolBufferException {
           return new websiteData(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<websiteData> parser() {
+    public static google.Parser<websiteData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<websiteData> getParserForType() {
+    public google.Parser<websiteData> getParserForType() {
       return PARSER;
     }
 
@@ -768,7 +847,7 @@ public final class WebsiteDataProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\tom.proto3\022\004core\"E\n\013websiteData\022\014\n\004name" +
-      "\030\001 \002(\t\022\021\n\tipAddress\030\002 \002(\005\022\025\n\rlevelOfDoma" +
+      "\030\001 \002(\t\022\021\n\tipAddress\030\002 \002(\t\022\025\n\rlevelOfDoma" +
       "in\030\003 \002(\005B\022B\020WebsiteDataProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -779,7 +858,7 @@ public final class WebsiteDataProto {
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
+    google.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);

@@ -2,7 +2,7 @@ package core;
 import java.io.*;
 import java.net.*;
 import java.util.*;
-import core.WebsiteDataProto.*;
+//import core.WebsiteDataProto.*;
 
 
 public class Main {
@@ -34,7 +34,7 @@ public class Main {
 		// Z GITA CALY KATALOG COM.GOOGLE.PROTOBUF : package com.google.protobuf
 		try{
 			// WYSYLANIE
-			websiteData ONET = websiteData.newBuilder().setIpAddress("192.168.1.2").setName("Onet").setLevelOfDomain(0).build(); // test protoBuffer
+			//websiteData ONET = websiteData.newBuilder().setIpAddress("192.168.1.2").setName("Onet").setLevelOfDomain(0).build(); // test protoBuffer
 			//byte[] webSend = ONET.newBuilderForType().toByteArray(); ===> BRAKUJE? ALBO BEZ TEGO I W DATAGRAM WRZUCIC LEVEL_OF_DOMAIN?
 			
 			DatagramSocket client = new DatagramSocket(); // socket do przesylania i odbierania  datagramow
@@ -59,6 +59,7 @@ public class Main {
 			DatagramPacket receiver = new DatagramPacket(receivebyte,receivebyte.length);
             client.receive(receiver);
             String data =new String(receiver.getData());
+            
             System.out.println("IP address / domain : "+ data.trim()); // odczytanie usuwajac biale znaki
             client.close();
 		}

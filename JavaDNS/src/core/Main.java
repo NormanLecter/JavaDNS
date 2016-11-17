@@ -3,6 +3,7 @@ package core;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 	public static void main(String args[]) {
@@ -22,6 +23,8 @@ public class Main {
 	            String adress = getAdress(str);
 	            int levelOfDomain = getLevelOfDomain(str);
 	            
+	            System.out.println("odebrano: " + str);
+	            
 	            InetAddress addr = receiver.getAddress();
 	            int port = receiver.getPort();
 	            
@@ -29,14 +32,14 @@ public class Main {
 	            String first[] = {"org", "pl"};
 	            String org[] = {"joemonster.org", "wikipedia.org"};
 	            String pl[] = {"wolniak.pl", "osak.pl"};
-	            
+	           
 	            switch(levelOfDomain) {
 	            case 0: {
 	            	// sprawdzanie czy istnieje taka .domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
 	            	String domain = getDomain(str);
 	            	String msg = "";
-	            	
-	            	boolean sent = false;
+
+	            	boolean sent = true;
 	            	for(String s : first) {
 	            		if(s.equals(domain)) {
 	    	            	levelOfDomain++;
@@ -44,13 +47,17 @@ public class Main {
 	    	            	sent = true;
 	            		}
 	            	}
-	            	
+	            	levelOfDomain++;
+	            	msg = getMessage(levelOfDomain, adress);
 	            	if(!sent) {
+	            		System.out.println("tu");
     	            	msg = getMessage(-1, adress);
 	            	}
 
+	            	System.out.println("wyslano: " + msg);
             		sendbyte = msg.getBytes();
                     DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    Thread.sleep(1000);
                     server.send(sender);
 
 	            	break; }
@@ -59,33 +66,27 @@ public class Main {
 	            	// sprawdzenie czy istnieje taka strona.domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
 	            	String nameOfSite = getNameOfSite(str);
 	            	String msg = "";
-	            	
-	            	boolean sent = false;
-	            	for(String s : org) {
-	            		if(s.equals(nameOfSite)) {
-	    	            	levelOfDomain++;
-	    	            	msg = getMessage(levelOfDomain, adress);
-	    	            	sent = true;
-	            		}
-	            	}
-	            	
-	            	if(!sent) {
-    	            	msg = getMessage(-1, adress);
-	            	}      
+	            
 
+	            	levelOfDomain++;
+	            	msg = getMessage(levelOfDomain, adress);
+	            	System.out.println("wyslano: " + msg);
             		sendbyte = msg.getBytes();
                     DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    Thread.sleep(1000);
                     server.send(sender);
+                    System.out.println("wyslano2: " + msg);
 	            	break; }
 	            	
 	            case 4: {
 	            	// TODO odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
 	            	
-	    	        levelOfDomain++;
-	    	        String msg = getMessage(levelOfDomain, "26.07.19.96");
+	    	        String msg = getMessage(0, "26.07.19.96");
 
+	    	        System.out.println("wyslano: " + msg);
             		sendbyte = msg.getBytes();
                     DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
+                    Thread.sleep(1000);
                     server.send(sender);
 	            	break; }
 	            }
@@ -95,6 +96,17 @@ public class Main {
 	    }
 	    System.out.println("end");
     }
+	
+	private static boolean porownaj(String a, String b) {
+		if(a.length() != b.length())
+			return false;
+		
+		for(int i = 0; i < a.length(); i++)
+			if(a.toCharArray()[i] != b.toCharArray()[i])
+				return false;
+		
+		return true;
+	}
 	
 	private static String getMessage(int level, String adress) {
 		String s = "";
@@ -155,8 +167,8 @@ public class Main {
 	private static String getNameOfSite(String received) {
 		StringBuffer s = new StringBuffer();
 		s.append(getAdress(received));
-		for(int i = 0; i < 4; i++)
-			s.deleteCharAt(0);
+		for(int i = 0; i < 4; i++) 
+			s.deleteCharAt(i);
 		
 		return s.toString();
 	}

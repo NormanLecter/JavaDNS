@@ -2,6 +2,7 @@ package core;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 //import core.WebsiteDataProto.*;
 
 
@@ -11,7 +12,6 @@ public class Main {
 	
 	private static int getLevelOfDomain(String received) {
 		String s = "";
-		received = "0 1";
 		for(Character c : received.toCharArray()) {
 			if(c != ' ') {
 				s += c;
@@ -35,24 +35,31 @@ public class Main {
 	
 	public static void main(String[] args) {
 		adress = "";
+		received = "9 9";
+		
+		DatagramSocket client;
+		try {
+			client = new DatagramSocket();
+			InetAddress address = InetAddress.getByName("192.168.41.105"); // klasa przechowujaca adres IP
+		// socket do przesylania i odbierania  datagramow
+		
 		
 		// Z GITA CALY KATALOG COM.GOOGLE.PROTOBUF : package com.google.protobuf
-		while(getLevelOfDomain(received) == 0 || getLevelOfDomain(received) == -1) {
+		while(getLevelOfDomain(received) != 0) {
 			try{
 				// WYSYLANIE
 				//websiteData ONET = websiteData.newBuilder().setIpAddress("192.168.1.2").setName("Onet").setLevelOfDomain(0).build(); // test protoBuffer
 				//byte[] webSend = ONET.newBuilderForType().toByteArray(); ===> BRAKUJE? ALBO BEZ TEGO I W DATAGRAM WRZUCIC LEVEL_OF_DOMAIN?
 				
-				DatagramSocket client = new DatagramSocket(); // socket do przesylania i odbierania  datagramow
-				InetAddress address = InetAddress.getByName("192.168.41.106"); // klasa przechowujaca adres IP
+				
 			
 				byte[] sendbyte = new byte[1024]; // konterner wysylanych danych w bajtach
 				byte[] receivebyte = new byte[1024]; // konterner odbierania danych w bajtach
 				
-				BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-	            System.out.println("Enter domain or IP address AND level od domain... ");
-	            
+
 	            if(adress.length() < 1) {
+					BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+		            System.out.println("Enter domain or IP address AND level od domain... ");
 	            	adress = in.readLine();
 		            int k = 0;
 		            String domain = "";
@@ -67,21 +74,28 @@ public class Main {
 				DatagramPacket receiver = new DatagramPacket(receivebyte,receivebyte.length);
 	            client.receive(receiver);
 	            String data = new String(receiver.getData());
-	            
+	            System.out.println("odebralem: " + data);
+	            received = data;
 	            int levelOfDomain = getLevelOfDomain(data);
 	            levelOfDomain++;
 	            String msg = getMessage(levelOfDomain, adress);
+	            System.out.println("wyslalem: " + msg);
 	            
 	            sendbyte = msg.getBytes();
 				DatagramPacket sende2r = new DatagramPacket(sendbyte, sendbyte.length, address, 53); // 'spakowanie' wszystkiego do wyslania
 				client.send(sende2r);
 	                
-	            client.close();
+
 			}
 			catch(Exception e){
 				System.out.println(e);
 			}
 		}
+        client.close();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
 	}
 	
 	private static String getMessage(int level, String adress) {

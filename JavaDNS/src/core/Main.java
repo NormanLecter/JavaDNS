@@ -1,11 +1,14 @@
 package core;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
+	private static InetAddress addr;
+	private static int port;
+	
 	public static void main(String args[]) {
 		boolean serverRunning = true;
 		
@@ -13,99 +16,58 @@ public class Main {
 	    	DatagramSocket server = new DatagramSocket(53);
 	    	
 	        while(serverRunning) {
-	        	byte[] sendbyte = new byte[1024];
-	            byte[] receivebyte = new byte[1024];
-	            
-	            DatagramPacket receiver = new DatagramPacket(receivebyte, receivebyte.length);
-	            server.receive(receiver);
-	            
-	            String str = new String(receiver.getData());
+	            String str = receive(server);
 	            String adress = getAdress(str);
+	            
 	            int levelOfDomain = getLevelOfDomain(str);
 	            
-	            System.out.println("odebrano: " + str);
-	            
-	            InetAddress addr = receiver.getAddress();
-	            int port = receiver.getPort();
-	            
-	            //TODO podlaczyc jsony.
-	            String first[] = {"org", "pl"};
-	            String org[] = {"joemonster.org", "wikipedia.org"};
-	            String pl[] = {"wolniak.pl", "osak.pl"};
-	           
 	            switch(levelOfDomain) {
 	            case 0: {
 	            	// sprawdzanie czy istnieje taka .domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
 	            	String domain = getDomain(str);
-	            	String msg = "";
 
-	            	boolean sent = true;
-	            	for(String s : first) {
-	            		if(s.equals(domain)) {
-	    	            	levelOfDomain++;
-	    	            	msg = getMessage(levelOfDomain, adress);
-	    	            	sent = true;
-	            		}
-	            	}
-	            	levelOfDomain++;
-	            	msg = getMessage(levelOfDomain, adress);
-	            	if(!sent) {
-	            		System.out.println("tu");
-    	            	msg = getMessage(-1, adress);
-	            	}
-
-	            	System.out.println("wyslano: " + msg);
-            		sendbyte = msg.getBytes();
-                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
-                    Thread.sleep(1000);
-                    server.send(sender);
+	            	levelOfDomain++;     	
+                    send(server, addr, port, getMessage(levelOfDomain, adress));
 
 	            	break; }
 	            	
 	            case 2: {
 	            	// sprawdzenie czy istnieje taka strona.domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
 	            	String nameOfSite = getNameOfSite(str);
-	            	String msg = "";
-	            
-
-	            	levelOfDomain++;
-	            	msg = getMessage(levelOfDomain, adress);
-	            	System.out.println("wyslano: " + msg);
-            		sendbyte = msg.getBytes();
-                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
-                    Thread.sleep(1000);
-                    server.send(sender);
-                    System.out.println("wyslano2: " + msg);
+	 
+	            	levelOfDomain++;    	
+                    send(server, addr, port, getMessage(levelOfDomain, adress));
 	            	break; }
 	            	
 	            case 4: {
 	            	// TODO odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
-	            	
-	    	        String msg = getMessage(0, "26.07.19.96");
-
-	    	        System.out.println("wyslano: " + msg);
-            		sendbyte = msg.getBytes();
-                    DatagramPacket sender= new DatagramPacket(sendbyte, sendbyte.length, addr, port);
-                    Thread.sleep(1000);
-                    server.send(sender);
+                    send(server, addr, port, getMessage(0, "26.07.19.96"));
 	            	break; }
 	            }
 	       }
 	    } catch(Exception e) {
 	    	System.out.println(e);
 	    }
-	    System.out.println("end");
+	    System.out.println("Server down.");
     }
 	
-	private static boolean porownaj(String a, String b) {
-		if(a.length() != b.length())
-			return false;
-		
-		for(int i = 0; i < a.length(); i++)
-			if(a.toCharArray()[i] != b.toCharArray()[i])
-				return false;
-		
-		return true;
+	private static String receive(DatagramSocket server) throws IOException {
+		byte[] receivebyte = new byte[1024];
+        DatagramPacket receiver = new DatagramPacket(receivebyte, receivebyte.length);
+        server.receive(receiver);
+   
+        addr = receiver.getAddress();
+        port = receiver.getPort();
+        
+        String s = new String(receiver.getData());
+        System.out.println("From " + addr + ", port: " + port + " received: " + s);
+        return s;
+	}
+	
+	private static void send(DatagramSocket server, InetAddress addr, int port, String msg) throws IOException {
+		DatagramPacket sender = new DatagramPacket(msg.getBytes(), msg.getBytes().length, addr, port);
+        server.send(sender);
+		System.out.println("  To " + addr + ", port: " + port + " sent: " + msg);
 	}
 	
 	private static String getMessage(int level, String adress) {

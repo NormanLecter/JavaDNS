@@ -1,6 +1,8 @@
 package core;
 import java.io.*;
 import java.net.*;
+import core.ProtosMessageDNS.*;
+
 
 public class Main {
 	private static InetAddress addr;
@@ -16,11 +18,13 @@ public class Main {
 		try {
 			client = new DatagramSocket();
 			addr = InetAddress.getByName("150.254.144.3");
-	
+			
+			/* TEST PROTOBUF */
+			MessageDNS.Builder MsgDNS = MessageDNS.newBuilder();
+			/* KONIEC TESTU */
+			
 			while(getLevelOfDomain(received) != -1) {
-				// WYSYLANIE
-				//websiteData ONET = websiteData.newBuilder().setIpAddress("192.168.1.2").setName("Onet").setLevelOfDomain(0).build(); // test protoBuffer
-				//byte[] webSend = ONET.newBuilderForType().toByteArray(); ===> BRAKUJE? ALBO BEZ TEGO I W DATAGRAM WRZUCIC LEVEL_OF_DOMAIN?
+				
 				
 		        if(adress.length() < 1) {
 					BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -33,7 +37,6 @@ public class Main {
 			        domain += adress;
 			        send(client, addr, port, domain);
 		        }
-		        //ODBIERANIE
 	
 		        String data = receive(client);
 		            

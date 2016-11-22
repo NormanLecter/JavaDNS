@@ -9,8 +9,6 @@ import com.google.protobuf.InvalidProtocolBufferException;
 
 import core.ProtosMessageDNS.*;
 import core.ProtosMessageDNS.MessageDNS.Answer;
-import core.ProtosMessageDNS.MessageDNS.Header;
-import core.ProtosMessageDNS.MessageDNS.Question;
 
 public class Main {
 	private static final int MAX_ANSWER_SIZE = 2054;
@@ -26,7 +24,6 @@ public class Main {
 	    	
 	        while(serverRunning) {
 	            String str = receive(server);
-	            String adress = getAdress(str);
 	           /* 
 	            int levelOfDomain = getLevelOfDomain(str);
 	            
@@ -93,70 +90,5 @@ public class Main {
 		DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
         server.send(sender);
 		System.out.println("  To " + addr + ", port: " + port + " sent: " + bytes.toString());
-	}
-	
-	private static String getMessage(int level, String adress) {
-		String s = "";
-		s += Integer.toString(level);
-		s += " ";
-		s += adress;
-		return s;
-	}
-	
-	private static int getLevelOfDomain(String received) {
-		String s = "";
-		for(Character c : received.toCharArray()) {
-			if(c != ' ') {
-				s += c;
-			} else break;
-		}
-		
-		return Integer.parseInt(s);
-	}
-	
-	private static String getAdress(String received) {
-		StringBuffer s = new StringBuffer();
-		char[] array = received.toCharArray();
-		for(int i = array.length-1; i >= 0; i--) {
-			if(array[i] != ' ') {
-				s.append(array[i]);
-			} else break;
-		}
-		s.reverse();
-		return s.toString();
-	}
-	
-	private static String getDomain(String received) {
-		int dots = 0;
-		
-		for(Character c : received.toCharArray()) 
-			if(c == '.') 
-				dots++;
-		
-		StringBuffer s = new StringBuffer();
-		char[] array = received.toCharArray();
-		for(int i = array.length-1; i >= 0; i--) {
-			if(dots <= 1) {
-				s.deleteCharAt(s.length()-1);
-				break;
-			}
-			
-			s.append(array[i]);
-			
-			if(array[i] == '.') 
-				dots--;
-		}
-		s.reverse();
-		
-		return s.toString();
-	}
-	
-	private static String getNameOfSite(String received) {
-		StringBuffer s = new StringBuffer();
-		s.append(getAdress(received));
-		for(int i = 0; i < 4; i++) 
-			s.deleteCharAt(i);
-		
-		return s.toString();
 	}
 }

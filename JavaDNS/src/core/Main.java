@@ -2,6 +2,8 @@ package core;
 import java.io.*;
 import java.net.*;
 import core.ProtosMessageDNS.*;
+import core.ProtosMessageDNS.MessageDNS.Answer;
+import core.ProtosMessageDNS.MessageDNS.Question;
 
 
 public class Main {
@@ -17,11 +19,17 @@ public class Main {
 		DatagramSocket client;
 		try {
 			client = new DatagramSocket();
-			addr = InetAddress.getByName("150.254.144.3");
+			addr = InetAddress.getByName("192.168.43.28");
 			
-			/* TEST PROTOBUF */
-			MessageDNS.Builder MsgDNS = MessageDNS.newBuilder();
-			/* KONIEC TESTU */
+			/* START PROTOBUF */
+			MessageDNS.Builder MsgDNS = MessageDNS.newBuilder(); // ogolny builder, ogolna instancja - OGARNIJ WYSLANIE JAKO TO WLASNIE
+			MessageDNS.Header.Builder HeaderDNS = MessageDNS.Header.newBuilder(); // id jako levelOfDomian
+			MessageDNS.Question.Builder QuestionDNS = MessageDNS.Question.newBuilder(); // QNAME jako domena (ip lub nazwa)
+			
+			MessageDNS.Answer.Builder AnswerDNS = MessageDNS.Answer.newBuilder();
+			
+			/* KONIEC PROTOBUF */
+
 			
 			while(getLevelOfDomain(received) != -1) {
 				
@@ -29,13 +37,17 @@ public class Main {
 		        if(adress.length() < 1) {
 					BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 			        System.out.println("Enter domain or IP address AND level od domain... ");
-		            adress = in.readLine();
-			        int k = 0;
-			        String domain = "";
-			        domain += k;
-			        domain += " "; 
-			        domain += adress;
-			        send(client, addr, port, domain);
+			        String X = in.readLine();
+			       if(X.length()<2048){
+			        for(int i = X.length(); i<=2048; i++){
+			        	X+=" ";
+			        }
+			        }
+			        else{
+			        	System.out.println("Too long address, please enter again... ");
+			        	throw(new Exception());
+			        }
+			        send(client, addr, port, X, 0);
 		        }
 	
 		        String data = receive(client);
@@ -49,7 +61,7 @@ public class Main {
 		        }
 		            
 		        levelOfDomain++;
-		        send(client, addr, port, getMessage(levelOfDomain, adress));
+		       // send(client, addr, port, getMessage(levelOfDomain, adress));
 		    }
 			client.close();
 		} catch (Exception e1) {
@@ -70,10 +82,20 @@ public class Main {
         return s;
 	}
 	
-	private static void send(DatagramSocket server, InetAddress addr, int port, String msg) throws IOException {
-		DatagramPacket sender = new DatagramPacket(msg.getBytes(), msg.getBytes().length, addr, port);
+	private static void send(DatagramSocket server, InetAddress addr, int port, String NAME, int TTL) throws IOException {
+		MessageDNS.Answer.Builder answer = MessageDNS.Answer.newBuilder();
+		answer.setNAME(NAME);
+		answer.setTTL(TTL);
+		
+		byte[] bytes = answer.build().toByteArray();
+		
+		DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
         server.send(sender);
-		System.out.println("  To " + addr + ", port: " + port + " sent: " + msg);
+        System.out.println(bytes.length);
+		System.out.println("  To " + addr + ", port: " + port + " sent: " + bytes.toString());
+		Answer answer2 = MessageDNS.Answer.parseFrom(bytes);
+		System.out.println(answer2.getNAME());
+		System.out.println(answer2.getTTL());
 	}
 	
 	private static int getLevelOfDomain(String received) {

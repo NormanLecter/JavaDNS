@@ -2,8 +2,9 @@
 // source: MessageDNS.proto
 
 package core;
-
 import com.google.protobuf.*;
+
+import core.ProtosMessageDNS.MessageDNS.Builder;
 
 public final class ProtosMessageDNS {
   private ProtosMessageDNS() {}
@@ -6742,6 +6743,11 @@ public final class ProtosMessageDNS {
           final UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
+	public Builder addHeader(core.ProtosMessageDNS.MessageDNS.Header.Builder newBuilder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
       // @@protoc_insertion_point(builder_scope:core.MessageDNS)

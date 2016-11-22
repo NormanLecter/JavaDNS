@@ -5,7 +5,16 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
+import com.google.protobuf.InvalidProtocolBufferException;
+
+import core.ProtosMessageDNS.*;
+import core.ProtosMessageDNS.MessageDNS.Answer;
+import core.ProtosMessageDNS.MessageDNS.Header;
+import core.ProtosMessageDNS.MessageDNS.Question;
+
 public class Main {
+	private static final int MAX_ANSWER_SIZE = 2054;
+	
 	private static InetAddress addr;
 	private static int port;
 	
@@ -18,7 +27,7 @@ public class Main {
 	        while(serverRunning) {
 	            String str = receive(server);
 	            String adress = getAdress(str);
-	            
+	           /* 
 	            int levelOfDomain = getLevelOfDomain(str);
 	            
 	            switch(levelOfDomain) {
@@ -27,7 +36,7 @@ public class Main {
 	            	String domain = getDomain(str);
 
 	            	levelOfDomain++;     	
-                    send(server, addr, port, getMessage(levelOfDomain, adress));
+                    //send(server, addr, port, getMessage(levelOfDomain, adress));
 
 	            	break; }
 	            	
@@ -36,38 +45,54 @@ public class Main {
 	            	String nameOfSite = getNameOfSite(str);
 	 
 	            	levelOfDomain++;    	
-                    send(server, addr, port, getMessage(levelOfDomain, adress));
+                   // send(server, addr, port, getMessage(levelOfDomain, adress));
 	            	break; }
 	            	
 	            case 4: {
 	            	// TODO odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
-                    send(server, addr, port, getMessage(0, "26.07.19.96"));
+                   // send(server, addr, port, getMessage(0, "26.07.19.96"));
 	            	break; }
 	            }
+	            */
 	       }
 	    } catch(Exception e) {
 	    	System.out.println(e);
 	    }
 	    System.out.println("Server down.");
-    }
+    }	
 	
 	private static String receive(DatagramSocket server) throws IOException {
-		byte[] receivebyte = new byte[1024];
+		byte[] receivebyte = new byte[MAX_ANSWER_SIZE];
+
         DatagramPacket receiver = new DatagramPacket(receivebyte, receivebyte.length);
         server.receive(receiver);
-   
+	
         addr = receiver.getAddress();
         port = receiver.getPort();
         
-        String s = new String(receiver.getData());
-        System.out.println("From " + addr + ", port: " + port + " received: " + s);
-        return s;
+		try {
+			Answer answer = MessageDNS.Answer.parseFrom(receivebyte);
+			System.out.println(answer.getNAME());
+			System.out.println(answer.getTTL());
+	        System.out.println("From " + addr + ", port: " + port + " received: " + receivebyte);
+		
+		} catch (InvalidProtocolBufferException e1) {
+			e1.printStackTrace();
+		}
+
+        return "";
 	}
 	
-	private static void send(DatagramSocket server, InetAddress addr, int port, String msg) throws IOException {
-		DatagramPacket sender = new DatagramPacket(msg.getBytes(), msg.getBytes().length, addr, port);
+	private static void send(DatagramSocket server, InetAddress addr, int port, String NAME, int TTL) throws IOException {
+		MessageDNS.Answer.Builder answer = MessageDNS.Answer.newBuilder();
+		answer.setNAME(NAME);
+		answer.setTTL(TTL);
+		
+		byte[] bytes = answer.build().toByteArray();
+		
+		DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
         server.send(sender);
-		System.out.println("  To " + addr + ", port: " + port + " sent: " + msg);
+		System.out.println("  To " + addr + ", port: " + port + " sent: " + bytes.toString());
 	}
 	
 	private static String getMessage(int level, String adress) {

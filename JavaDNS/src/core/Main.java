@@ -15,6 +15,8 @@ public class Main {
 	
 	private static InetAddress addr;
 	private static int port;
+	private static int levelOfDomain;
+	private static String domain;
 	
 	public static void main(String args[]) {
 		boolean serverRunning = true;
@@ -24,33 +26,22 @@ public class Main {
 	    	
 	        while(serverRunning) {
 	            String str = receive(server);
-	           /* 
-	            int levelOfDomain = getLevelOfDomain(str);
-	            
+	             
 	            switch(levelOfDomain) {
 	            case 0: {
-	            	// sprawdzanie czy istnieje taka .domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
-	            	String domain = getDomain(str);
-
-	            	levelOfDomain++;     	
-                    //send(server, addr, port, getMessage(levelOfDomain, adress));
-
+	            	levelOfDomain++;
 	            	break; }
 	            	
 	            case 2: {
-	            	// sprawdzenie czy istnieje taka strona.domena je¿eli tak to odes³anie ze zwiêkszeniem levelOfDomain
-	            	String nameOfSite = getNameOfSite(str);
-	 
-	            	levelOfDomain++;    	
-                   // send(server, addr, port, getMessage(levelOfDomain, adress));
+	            	levelOfDomain++;
 	            	break; }
 	            	
 	            case 4: {
-	            	// TODO odnalezienie adresu IP strony i odes³anie wrz z levelOfDomain = 0;
-                   // send(server, addr, port, getMessage(0, "26.07.19.96"));
+	            	levelOfDomain = 0;
+	            	
 	            	break; }
 	            }
-	            */
+	            send(server);
 	       }
 	    } catch(Exception e) {
 	    	System.out.println(e);
@@ -69,9 +60,10 @@ public class Main {
         
 		try {
 			Answer answer = MessageDNS.Answer.parseFrom(receivebyte);
-			System.out.println(answer.getNAME());
-			System.out.println(answer.getTTL());
-	        System.out.println("From " + addr + ", port: " + port + " received: " + receivebyte);
+			levelOfDomain = answer.getTTL();
+			domain = answer.getNAME();
+			
+	        System.out.println("From " + addr + ", port: " + port + " received: " + domain + " " + levelOfDomain);
 		
 		} catch (InvalidProtocolBufferException e1) {
 			e1.printStackTrace();
@@ -80,15 +72,13 @@ public class Main {
         return "";
 	}
 	
-	private static void send(DatagramSocket server, InetAddress addr, int port, String NAME, int TTL) throws IOException {
-		MessageDNS.Answer.Builder answer = MessageDNS.Answer.newBuilder();
-		answer.setNAME(NAME);
-		answer.setTTL(TTL);
-		
-		byte[] bytes = answer.build().toByteArray();
-		
-		DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
+	private static void send(DatagramSocket server) throws IOException {
+        MessageDNS.Answer.Builder answerSend = MessageDNS.Answer.newBuilder();
+        answerSend.setNAME(domain);
+        answerSend.setTTL(levelOfDomain);
+        byte[] bytes = answerSend.build().toByteArray();
+        DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
         server.send(sender);
-		System.out.println("  To " + addr + ", port: " + port + " sent: " + bytes.toString());
+        System.out.println("-> To " + addr + ", port: " + port + " send: " + answerSend.getNAME() + " " + answerSend.getTTL());
 	}
 }

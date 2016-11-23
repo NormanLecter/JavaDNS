@@ -11,7 +11,7 @@ import core.ProtosMessageDNS.*;
 import core.ProtosMessageDNS.MessageDNS.Answer;
 
 public class Main {
-	private static final int MAX_ANSWER_SIZE = 2054;
+	private static final int MAX_ANSWER_SIZE = 2048;
 	
 	private static InetAddress addr;
 	private static int port;
@@ -25,7 +25,7 @@ public class Main {
 	    	DatagramSocket server = new DatagramSocket(53);
 	    	
 	        while(serverRunning) {
-	            String str = receive(server);
+	            receive(server);
 	             
 	            switch(levelOfDomain) {
 	            case 0: {
@@ -37,6 +37,8 @@ public class Main {
 	            	break; }
 	            	
 	            case 4: {
+	            	domain = "126.821.24.4";
+	            	fullMsg();
 	            	levelOfDomain = 0;
 	            	
 	            	break; }
@@ -49,12 +51,12 @@ public class Main {
 	    System.out.println("Server down.");
     }	
 	
-	private static String receive(DatagramSocket server) throws IOException {
-		byte[] receivebyte = new byte[MAX_ANSWER_SIZE];
+	private static void receive(DatagramSocket server) throws IOException {
+		byte[] receivebyte = new byte[MAX_ANSWER_SIZE + 6];
 
         DatagramPacket receiver = new DatagramPacket(receivebyte, receivebyte.length);
         server.receive(receiver);
-	
+        
         addr = receiver.getAddress();
         port = receiver.getPort();
         
@@ -63,13 +65,10 @@ public class Main {
 			levelOfDomain = answer.getTTL();
 			domain = answer.getNAME();
 			
-	        System.out.println("From " + addr + ", port: " + port + " received: " + domain + " " + levelOfDomain);
-		
+			System.out.println(port + " <- " + addr + " receive: " + levelOfDomain + " " + domain);
 		} catch (InvalidProtocolBufferException e1) {
 			e1.printStackTrace();
 		}
-
-        return "";
 	}
 	
 	private static void send(DatagramSocket server) throws IOException {
@@ -77,8 +76,17 @@ public class Main {
         answerSend.setNAME(domain);
         answerSend.setTTL(levelOfDomain);
         byte[] bytes = answerSend.build().toByteArray();
+        
         DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
         server.send(sender);
-        System.out.println("-> To " + addr + ", port: " + port + " send: " + answerSend.getNAME() + " " + answerSend.getTTL());
+        System.out.println(port + " -> " + addr + " send: " + answerSend.getTTL() + " " + answerSend.getNAME());
 	}
+	
+    private static void fullMsg() {
+    	if(domain.length() <= MAX_ANSWER_SIZE) {
+    		for(int i = domain.length(); i <= MAX_ANSWER_SIZE; i++) {
+    			domain += " ";
+    		}
+    	}
+    }
 }

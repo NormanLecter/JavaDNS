@@ -1,6 +1,5 @@
 package core;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -9,8 +8,6 @@ import java.net.InetAddress;
 import java.util.Scanner;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONML;
 import org.json.JSONObject;
 
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -25,7 +22,6 @@ public class Main {
 	private static int port;
 	private static int levelOfDomain;
 	private static String domain;
-	private static String[] firstLevelFiles;
 	
 	public static void main(String args[]) {
 		boolean serverRunning = true;
@@ -52,7 +48,8 @@ public class Main {
 	            		for(int i = 0; i < array.length(); i++) 
 	            			if(array.get(i).equals(getDomain().trim()))
 								exist = true;
-								
+						scanner.close();
+	            		
 						if(!exist) {
 							throw new Exception("404 not found");
 						} else levelOfDomain++;
@@ -81,7 +78,8 @@ public class Main {
 	            			if(array.get(i).equals(getNameOfSite().trim()))
 								exist = true;
 	            		}
-								
+						scanner.close();
+						
 						if(!exist) {
 							throw new Exception("404 not found");
 						} else levelOfDomain++;
@@ -106,6 +104,7 @@ public class Main {
 		            	domain = array.getString(0);
 		            	fullMsg();
 		            	levelOfDomain = 0;        		
+		            	scanner.close();
 	            	} catch (Exception e) {
 	            	    e.printStackTrace();
 	            	    levelOfDomain = 0;

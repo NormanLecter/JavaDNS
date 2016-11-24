@@ -32,6 +32,11 @@ public class Main {
 	        while(serverRunning) {
 	            receive(server);
 	             
+	            if(!correctAddress(domain.trim())) {
+					levelOfDomain = 0;
+					domain = "Address is incorrect";
+					fullMsg();
+	            } else
 	            switch(levelOfDomain) {
 	            case 0: {
 	            	File file = new File("adresses/extension.json");
@@ -134,6 +139,8 @@ public class Main {
 			domain = answer.getNAME();
 			
 			System.out.println(port + " <- " + addr + " receive: " + levelOfDomain + " " + domain);
+			
+			domain = answer.getNAME().toLowerCase();
 		} catch (InvalidProtocolBufferException e1) {
 			e1.printStackTrace();
 		}
@@ -190,5 +197,26 @@ public class Main {
  			s.deleteCharAt(0);		
  				
  		return s.toString();		
+ 	}
+ 	
+ 	private static boolean correctAddress(String address) {	
+ 		if(address.length() < 7) 
+ 			return false;
+ 		
+ 		StringBuilder s = new StringBuilder(address);
+ 		if(!s.substring(0, 4).equals("www."))
+ 			return false;
+ 		
+ 		if(!s.substring(4, s.length()-2).contains("."))
+ 			return false;
+ 		
+ 		for(int i = 1; i < s.length(); i++)
+ 			if(s.charAt(i-1) == '.' && s.charAt(i) == '.')
+ 				return false;
+ 		
+ 		if(s.charAt(s.length()-1) == '.')
+ 			return false;
+ 		
+ 		return true;
  	}
 }

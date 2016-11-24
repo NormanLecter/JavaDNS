@@ -1,9 +1,17 @@
 package core;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.Scanner;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONML;
+import org.json.JSONObject;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -17,6 +25,7 @@ public class Main {
 	private static int port;
 	private static int levelOfDomain;
 	private static String domain;
+	private static String[] firstLevelFiles;
 	
 	public static void main(String args[]) {
 		boolean serverRunning = true;
@@ -29,18 +38,78 @@ public class Main {
 	             
 	            switch(levelOfDomain) {
 	            case 0: {
-	            	levelOfDomain++;
+	            	File file = new File("adresses/extension.json");
+	            	try {
+	            		String json = "";
+	            		Scanner scanner = new Scanner(file);
+	            		while(scanner.hasNext())
+	            			json += scanner.next();
+	            		
+	            		JSONObject obj = new JSONObject(json);
+	            		JSONArray array = obj.getJSONArray("data");
+	            		
+	            		boolean exist = false;
+	            		for(int i = 0; i < array.length(); i++) 
+	            			if(array.get(i).equals(getDomain().trim()))
+								exist = true;
+								
+						if(!exist) {
+							throw new Exception("404 not found");
+						} else levelOfDomain++;
+	            		
+	            	} catch (Exception e) {
+	            	    e.printStackTrace();
+						levelOfDomain = 0;
+						domain = "404 not found";
+						fullMsg();
+	            	}
 	            	break; }
 	            	
 	            case 2: {
-	            	levelOfDomain++;
+	            	File file = new File("adresses/" + getDomain().trim() + ".json");
+	            	try {
+	            		String json = "";
+	            		Scanner scanner = new Scanner(file);
+	            		while(scanner.hasNext())
+	            			json += scanner.next();
+	            		
+	            		JSONObject obj = new JSONObject(json);
+	            		JSONArray array = obj.getJSONArray("data");
+	            		
+	            		boolean exist = false;
+	            		for(int i = 0; i < array.length(); i++) {
+	            			if(array.get(i).equals(getNameOfSite().trim()))
+								exist = true;
+	            		}
+								
+						if(!exist) {
+							throw new Exception("404 not found");
+						} else levelOfDomain++;
+	            	} catch (Exception e) {
+	            	    e.printStackTrace();
+						levelOfDomain = 0;
+						domain = "404 not found";
+						fullMsg();
+	            	}
 	            	break; }
 	            	
 	            case 4: {
-	            	domain = "126.821.24.4";
-	            	fullMsg();
-	            	levelOfDomain = 0;
-	            	
+	            	File file = new File("adresses/" + getNameOfSite().trim() + ".json");
+	            	try {
+	            		String json = "";
+	            		Scanner scanner = new Scanner(file);
+	            		while(scanner.hasNext())
+	            			json += scanner.next();
+	            		
+	            		JSONObject obj = new JSONObject(json);
+	            		JSONArray array = obj.getJSONArray("data");
+		            	domain = array.getString(0);
+		            	fullMsg();
+		            	levelOfDomain = 0;        		
+	            	} catch (Exception e) {
+	            	    e.printStackTrace();
+	            	    levelOfDomain = 0;
+	            	}       
 	            	break; }
 	            }
 	            send(server);
@@ -89,4 +158,38 @@ public class Main {
     		}
     	}
     }
+ 			
+ 	private static String getDomain() {		
+ 		int dots = 0;		
+ 				
+ 		for(Character c : domain.toCharArray()) 		
+ 			if(c == '.') 		
+ 				dots++;		
+ 				
+ 		StringBuffer s = new StringBuffer();		
+ 		char[] array = domain.toCharArray();		
+ 		for(int i = array.length-1; i >= 0; i--) {		
+ 			if(dots <= 1) {		
+ 				s.deleteCharAt(s.length()-1);		
+ 				break;		
+ 			}		
+ 					
+ 			s.append(array[i]);		
+ 					
+ 			if(array[i] == '.') 		
+ 				dots--;		
+ 		}		
+ 		s.reverse();		
+ 				
+ 		return s.toString();		
+ 	}		
+ 			
+ 	private static String getNameOfSite() {		
+ 		StringBuffer s = new StringBuffer();		
+ 		s.append(domain);		
+ 		for(int i = 0; i < 4 && i < s.length(); i++) 		
+ 			s.deleteCharAt(0);		
+ 				
+ 		return s.toString();		
+ 	}
 }

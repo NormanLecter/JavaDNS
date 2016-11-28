@@ -2,51 +2,48 @@
 // source: MessageDNS.proto
 
 package core;
-import com.google.protobuf.*;
-
-import core.ProtosMessageDNS.MessageDNS.Builder;
 
 public final class ProtosMessageDNS {
   private ProtosMessageDNS() {}
   public static void registerAllExtensions(
-      ExtensionRegistryLite registry) {
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface MessageDNSOrBuilder extends
       // @@protoc_insertion_point(interface_extends:core.MessageDNS)
-      MessageOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
   }
   /**
    * Protobuf type {@code core.MessageDNS}
    */
   public  static final class MessageDNS extends
-      GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:core.MessageDNS)
       MessageDNSOrBuilder {
     // Use MessageDNS.newBuilder() to construct.
-    private MessageDNS(GeneratedMessageV3.Builder<?> builder) {
+    private MessageDNS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private MessageDNS() {
     }
 
     @java.lang.Override
-    public final UnknownFieldSet
+    public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     private MessageDNS(
-        CodedInputStream input,
-        ExtensionRegistryLite extensionRegistry)
-        throws InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      UnknownFieldSet.Builder unknownFields =
-          UnknownFieldSet.newBuilder();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -64,22 +61,22 @@ public final class ProtosMessageDNS {
             }
           }
         }
-      } catch (InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new InvalidProtocolBufferException(
+        throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final Descriptors.Descriptor
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return core.ProtosMessageDNS.internal_static_core_MessageDNS_descriptor;
     }
 
-    protected GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return core.ProtosMessageDNS.internal_static_core_MessageDNS_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -88,7 +85,7 @@ public final class ProtosMessageDNS {
 
     public interface HeaderOrBuilder extends
         // @@protoc_insertion_point(interface_extends:core.MessageDNS.Header)
-        MessageOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
@@ -211,7 +208,7 @@ public final class ProtosMessageDNS {
 
       /**
        * <pre>
-       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
        * </pre>
        *
        * <code>optional bool Z = 8;</code>
@@ -219,7 +216,7 @@ public final class ProtosMessageDNS {
       boolean hasZ();
       /**
        * <pre>
-       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
        * </pre>
        *
        * <code>optional bool Z = 8;</code>
@@ -228,7 +225,7 @@ public final class ProtosMessageDNS {
 
       /**
        * <pre>
-       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
        * </pre>
        *
        * <code>optional int32 RCODE = 9;</code>
@@ -236,7 +233,7 @@ public final class ProtosMessageDNS {
       boolean hasRCODE();
       /**
        * <pre>
-       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
        * </pre>
        *
        * <code>optional int32 RCODE = 9;</code>
@@ -310,16 +307,68 @@ public final class ProtosMessageDNS {
        * <code>optional int32 ARCOUNT = 13;</code>
        */
       int getARCOUNT();
+
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      boolean hasQUESTIONFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.Question getQUESTIONFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder getQUESTIONFIELDOrBuilder();
+
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      boolean hasANSWERFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.Answer getANSWERFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder getANSWERFIELDOrBuilder();
+
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      boolean hasAUTHORITYFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.Authority getAUTHORITYFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder getAUTHORITYFIELDOrBuilder();
+
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      boolean hasADITIONALFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.Aditional getADITIONALFIELD();
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder getADITIONALFIELDOrBuilder();
     }
     /**
      * Protobuf type {@code core.MessageDNS.Header}
      */
     public  static final class Header extends
-        GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:core.MessageDNS.Header)
         HeaderOrBuilder {
       // Use Header.newBuilder() to construct.
-      private Header(GeneratedMessageV3.Builder<?> builder) {
+      private Header(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private Header() {
@@ -339,18 +388,18 @@ public final class ProtosMessageDNS {
       }
 
       @java.lang.Override
-      public final UnknownFieldSet
+      public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       private Header(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        UnknownFieldSet.Builder unknownFields =
-            UnknownFieldSet.newBuilder();
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -431,24 +480,76 @@ public final class ProtosMessageDNS {
                 aRCOUNT_ = input.readInt32();
                 break;
               }
+              case 114: {
+                core.ProtosMessageDNS.MessageDNS.Question.Builder subBuilder = null;
+                if (((bitField0_ & 0x00002000) == 0x00002000)) {
+                  subBuilder = qUESTIONFIELD_.toBuilder();
+                }
+                qUESTIONFIELD_ = input.readMessage(core.ProtosMessageDNS.MessageDNS.Question.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(qUESTIONFIELD_);
+                  qUESTIONFIELD_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00002000;
+                break;
+              }
+              case 122: {
+                core.ProtosMessageDNS.MessageDNS.Answer.Builder subBuilder = null;
+                if (((bitField0_ & 0x00004000) == 0x00004000)) {
+                  subBuilder = aNSWERFIELD_.toBuilder();
+                }
+                aNSWERFIELD_ = input.readMessage(core.ProtosMessageDNS.MessageDNS.Answer.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(aNSWERFIELD_);
+                  aNSWERFIELD_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00004000;
+                break;
+              }
+              case 130: {
+                core.ProtosMessageDNS.MessageDNS.Authority.Builder subBuilder = null;
+                if (((bitField0_ & 0x00008000) == 0x00008000)) {
+                  subBuilder = aUTHORITYFIELD_.toBuilder();
+                }
+                aUTHORITYFIELD_ = input.readMessage(core.ProtosMessageDNS.MessageDNS.Authority.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(aUTHORITYFIELD_);
+                  aUTHORITYFIELD_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00008000;
+                break;
+              }
+              case 138: {
+                core.ProtosMessageDNS.MessageDNS.Aditional.Builder subBuilder = null;
+                if (((bitField0_ & 0x00010000) == 0x00010000)) {
+                  subBuilder = aDITIONALFIELD_.toBuilder();
+                }
+                aDITIONALFIELD_ = input.readMessage(core.ProtosMessageDNS.MessageDNS.Aditional.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(aDITIONALFIELD_);
+                  aDITIONALFIELD_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00010000;
+                break;
+              }
             }
           }
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new InvalidProtocolBufferException(
+          throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Header_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Header_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -621,7 +722,7 @@ public final class ProtosMessageDNS {
       private boolean z_;
       /**
        * <pre>
-       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
        * </pre>
        *
        * <code>optional bool Z = 8;</code>
@@ -631,7 +732,7 @@ public final class ProtosMessageDNS {
       }
       /**
        * <pre>
-       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+       * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
        * </pre>
        *
        * <code>optional bool Z = 8;</code>
@@ -644,7 +745,7 @@ public final class ProtosMessageDNS {
       private int rCODE_;
       /**
        * <pre>
-       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
        * </pre>
        *
        * <code>optional int32 RCODE = 9;</code>
@@ -654,7 +755,7 @@ public final class ProtosMessageDNS {
       }
       /**
        * <pre>
-       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+       * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
        * </pre>
        *
        * <code>optional int32 RCODE = 9;</code>
@@ -755,6 +856,90 @@ public final class ProtosMessageDNS {
         return aRCOUNT_;
       }
 
+      public static final int QUESTION_FIELD_FIELD_NUMBER = 14;
+      private core.ProtosMessageDNS.MessageDNS.Question qUESTIONFIELD_;
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      public boolean hasQUESTIONFIELD() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.Question getQUESTIONFIELD() {
+        return qUESTIONFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Question.getDefaultInstance() : qUESTIONFIELD_;
+      }
+      /**
+       * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder getQUESTIONFIELDOrBuilder() {
+        return qUESTIONFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Question.getDefaultInstance() : qUESTIONFIELD_;
+      }
+
+      public static final int ANSWER_FIELD_FIELD_NUMBER = 15;
+      private core.ProtosMessageDNS.MessageDNS.Answer aNSWERFIELD_;
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      public boolean hasANSWERFIELD() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.Answer getANSWERFIELD() {
+        return aNSWERFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Answer.getDefaultInstance() : aNSWERFIELD_;
+      }
+      /**
+       * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder getANSWERFIELDOrBuilder() {
+        return aNSWERFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Answer.getDefaultInstance() : aNSWERFIELD_;
+      }
+
+      public static final int AUTHORITY_FIELD_FIELD_NUMBER = 16;
+      private core.ProtosMessageDNS.MessageDNS.Authority aUTHORITYFIELD_;
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      public boolean hasAUTHORITYFIELD() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.Authority getAUTHORITYFIELD() {
+        return aUTHORITYFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Authority.getDefaultInstance() : aUTHORITYFIELD_;
+      }
+      /**
+       * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder getAUTHORITYFIELDOrBuilder() {
+        return aUTHORITYFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Authority.getDefaultInstance() : aUTHORITYFIELD_;
+      }
+
+      public static final int ADITIONAL_FIELD_FIELD_NUMBER = 17;
+      private core.ProtosMessageDNS.MessageDNS.Aditional aDITIONALFIELD_;
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      public boolean hasADITIONALFIELD() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.Aditional getADITIONALFIELD() {
+        return aDITIONALFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Aditional.getDefaultInstance() : aDITIONALFIELD_;
+      }
+      /**
+       * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+       */
+      public core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder getADITIONALFIELDOrBuilder() {
+        return aDITIONALFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Aditional.getDefaultInstance() : aDITIONALFIELD_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -765,7 +950,7 @@ public final class ProtosMessageDNS {
         return true;
       }
 
-      public void writeTo(CodedOutputStream output)
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeInt32(1, id_);
@@ -806,6 +991,18 @@ public final class ProtosMessageDNS {
         if (((bitField0_ & 0x00001000) == 0x00001000)) {
           output.writeInt32(13, aRCOUNT_);
         }
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          output.writeMessage(14, getQUESTIONFIELD());
+        }
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          output.writeMessage(15, getANSWERFIELD());
+        }
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+          output.writeMessage(16, getAUTHORITYFIELD());
+        }
+        if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          output.writeMessage(17, getADITIONALFIELD());
+        }
         unknownFields.writeTo(output);
       }
 
@@ -815,56 +1012,72 @@ public final class ProtosMessageDNS {
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(1, id_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(2, qR_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(3, opcode_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(4, aA_);
         }
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(5, tC_);
         }
         if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(6, rD_);
         }
         if (((bitField0_ & 0x00000040) == 0x00000040)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(7, rA_);
         }
         if (((bitField0_ & 0x00000080) == 0x00000080)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(8, z_);
         }
         if (((bitField0_ & 0x00000100) == 0x00000100)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(9, rCODE_);
         }
         if (((bitField0_ & 0x00000200) == 0x00000200)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(10, qDCOUNT_);
         }
         if (((bitField0_ & 0x00000400) == 0x00000400)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(11, aNCOUNT_);
         }
         if (((bitField0_ & 0x00000800) == 0x00000800)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(12, nSCOUNT_);
         }
         if (((bitField0_ & 0x00001000) == 0x00001000)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(13, aRCOUNT_);
+        }
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(14, getQUESTIONFIELD());
+        }
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(15, getANSWERFIELD());
+        }
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(16, getAUTHORITYFIELD());
+        }
+        if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(17, getADITIONALFIELD());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -948,6 +1161,26 @@ public final class ProtosMessageDNS {
           result = result && (getARCOUNT()
               == other.getARCOUNT());
         }
+        result = result && (hasQUESTIONFIELD() == other.hasQUESTIONFIELD());
+        if (hasQUESTIONFIELD()) {
+          result = result && getQUESTIONFIELD()
+              .equals(other.getQUESTIONFIELD());
+        }
+        result = result && (hasANSWERFIELD() == other.hasANSWERFIELD());
+        if (hasANSWERFIELD()) {
+          result = result && getANSWERFIELD()
+              .equals(other.getANSWERFIELD());
+        }
+        result = result && (hasAUTHORITYFIELD() == other.hasAUTHORITYFIELD());
+        if (hasAUTHORITYFIELD()) {
+          result = result && getAUTHORITYFIELD()
+              .equals(other.getAUTHORITYFIELD());
+        }
+        result = result && (hasADITIONALFIELD() == other.hasADITIONALFIELD());
+        if (hasADITIONALFIELD()) {
+          result = result && getADITIONALFIELD()
+              .equals(other.getADITIONALFIELD());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -965,7 +1198,7 @@ public final class ProtosMessageDNS {
         }
         if (hasQR()) {
           hash = (37 * hash) + QR_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getQR());
         }
         if (hasOpcode()) {
@@ -974,27 +1207,27 @@ public final class ProtosMessageDNS {
         }
         if (hasAA()) {
           hash = (37 * hash) + AA_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getAA());
         }
         if (hasTC()) {
           hash = (37 * hash) + TC_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getTC());
         }
         if (hasRD()) {
           hash = (37 * hash) + RD_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getRD());
         }
         if (hasRA()) {
           hash = (37 * hash) + RA_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getRA());
         }
         if (hasZ()) {
           hash = (37 * hash) + Z_FIELD_NUMBER;
-          hash = (53 * hash) + Internal.hashBoolean(
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getZ());
         }
         if (hasRCODE()) {
@@ -1017,67 +1250,83 @@ public final class ProtosMessageDNS {
           hash = (37 * hash) + ARCOUNT_FIELD_NUMBER;
           hash = (53 * hash) + getARCOUNT();
         }
+        if (hasQUESTIONFIELD()) {
+          hash = (37 * hash) + QUESTION_FIELD_FIELD_NUMBER;
+          hash = (53 * hash) + getQUESTIONFIELD().hashCode();
+        }
+        if (hasANSWERFIELD()) {
+          hash = (37 * hash) + ANSWER_FIELD_FIELD_NUMBER;
+          hash = (53 * hash) + getANSWERFIELD().hashCode();
+        }
+        if (hasAUTHORITYFIELD()) {
+          hash = (37 * hash) + AUTHORITY_FIELD_FIELD_NUMBER;
+          hash = (53 * hash) + getAUTHORITYFIELD().hashCode();
+        }
+        if (hasADITIONALFIELD()) {
+          hash = (37 * hash) + ADITIONAL_FIELD_FIELD_NUMBER;
+          hash = (53 * hash) + getADITIONALFIELD().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
-          ByteString data)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
-          ByteString data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(byte[] data)
-          throws InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
           byte[] data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseDelimitedFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
-          CodedInputStream input)
+          com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Header parseFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
@@ -1095,7 +1344,7 @@ public final class ProtosMessageDNS {
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -1103,15 +1352,15 @@ public final class ProtosMessageDNS {
        * Protobuf type {@code core.MessageDNS.Header}
        */
       public static final class Builder extends
-          GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:core.MessageDNS.Header)
           core.ProtosMessageDNS.MessageDNS.HeaderOrBuilder {
-        public static final Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Header_descriptor;
         }
 
-        protected GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Header_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -1124,13 +1373,17 @@ public final class ProtosMessageDNS {
         }
 
         private Builder(
-            GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (GeneratedMessageV3
+          if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
+            getQUESTIONFIELDFieldBuilder();
+            getANSWERFIELDFieldBuilder();
+            getAUTHORITYFIELDFieldBuilder();
+            getADITIONALFIELDFieldBuilder();
           }
         }
         public Builder clear() {
@@ -1161,10 +1414,34 @@ public final class ProtosMessageDNS {
           bitField0_ = (bitField0_ & ~0x00000800);
           aRCOUNT_ = 0;
           bitField0_ = (bitField0_ & ~0x00001000);
+          if (qUESTIONFIELDBuilder_ == null) {
+            qUESTIONFIELD_ = null;
+          } else {
+            qUESTIONFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00002000);
+          if (aNSWERFIELDBuilder_ == null) {
+            aNSWERFIELD_ = null;
+          } else {
+            aNSWERFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00004000);
+          if (aUTHORITYFIELDBuilder_ == null) {
+            aUTHORITYFIELD_ = null;
+          } else {
+            aUTHORITYFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00008000);
+          if (aDITIONALFIELDBuilder_ == null) {
+            aDITIONALFIELD_ = null;
+          } else {
+            aDITIONALFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00010000);
           return this;
         }
 
-        public Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Header_descriptor;
         }
@@ -1237,6 +1514,38 @@ public final class ProtosMessageDNS {
             to_bitField0_ |= 0x00001000;
           }
           result.aRCOUNT_ = aRCOUNT_;
+          if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+            to_bitField0_ |= 0x00002000;
+          }
+          if (qUESTIONFIELDBuilder_ == null) {
+            result.qUESTIONFIELD_ = qUESTIONFIELD_;
+          } else {
+            result.qUESTIONFIELD_ = qUESTIONFIELDBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+            to_bitField0_ |= 0x00004000;
+          }
+          if (aNSWERFIELDBuilder_ == null) {
+            result.aNSWERFIELD_ = aNSWERFIELD_;
+          } else {
+            result.aNSWERFIELD_ = aNSWERFIELDBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+            to_bitField0_ |= 0x00008000;
+          }
+          if (aUTHORITYFIELDBuilder_ == null) {
+            result.aUTHORITYFIELD_ = aUTHORITYFIELD_;
+          } else {
+            result.aUTHORITYFIELD_ = aUTHORITYFIELDBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+            to_bitField0_ |= 0x00010000;
+          }
+          if (aDITIONALFIELDBuilder_ == null) {
+            result.aDITIONALFIELD_ = aDITIONALFIELD_;
+          } else {
+            result.aDITIONALFIELD_ = aDITIONALFIELDBuilder_.build();
+          }
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -1246,29 +1555,29 @@ public final class ProtosMessageDNS {
           return (Builder) super.clone();
         }
         public Builder setField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
-            Descriptors.FieldDescriptor field) {
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
         public Builder clearOneof(
-            Descriptors.OneofDescriptor oneof) {
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
         public Builder setRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
-        public Builder mergeFrom(Message other) {
+        public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof core.ProtosMessageDNS.MessageDNS.Header) {
             return mergeFrom((core.ProtosMessageDNS.MessageDNS.Header)other);
           } else {
@@ -1318,6 +1627,18 @@ public final class ProtosMessageDNS {
           if (other.hasARCOUNT()) {
             setARCOUNT(other.getARCOUNT());
           }
+          if (other.hasQUESTIONFIELD()) {
+            mergeQUESTIONFIELD(other.getQUESTIONFIELD());
+          }
+          if (other.hasANSWERFIELD()) {
+            mergeANSWERFIELD(other.getANSWERFIELD());
+          }
+          if (other.hasAUTHORITYFIELD()) {
+            mergeAUTHORITYFIELD(other.getAUTHORITYFIELD());
+          }
+          if (other.hasADITIONALFIELD()) {
+            mergeADITIONALFIELD(other.getADITIONALFIELD());
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -1328,13 +1649,13 @@ public final class ProtosMessageDNS {
         }
 
         public Builder mergeFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           core.ProtosMessageDNS.MessageDNS.Header parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (InvalidProtocolBufferException e) {
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (core.ProtosMessageDNS.MessageDNS.Header) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -1685,7 +2006,7 @@ public final class ProtosMessageDNS {
         private boolean z_ ;
         /**
          * <pre>
-         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
          * </pre>
          *
          * <code>optional bool Z = 8;</code>
@@ -1695,7 +2016,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
          * </pre>
          *
          * <code>optional bool Z = 8;</code>
@@ -1705,7 +2026,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
          * </pre>
          *
          * <code>optional bool Z = 8;</code>
@@ -1718,7 +2039,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byÄ‡ zero
+         * Zarezerowane dla przyszlego uzycia; na ten moment zawsze musi byæ zero
          * </pre>
          *
          * <code>optional bool Z = 8;</code>
@@ -1733,7 +2054,7 @@ public final class ProtosMessageDNS {
         private int rCODE_ ;
         /**
          * <pre>
-         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
          * </pre>
          *
          * <code>optional int32 RCODE = 9;</code>
@@ -1743,7 +2064,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
          * </pre>
          *
          * <code>optional int32 RCODE = 9;</code>
@@ -1753,7 +2074,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
          * </pre>
          *
          * <code>optional int32 RCODE = 9;</code>
@@ -1766,7 +2087,7 @@ public final class ProtosMessageDNS {
         }
         /**
          * <pre>
-         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obsÅ‚uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
+         * 4 bitowe pole odpowiedzi; 0 - brak bledow, 1 - blad formatu (serwer nie moze zinterpretowac zapytania), 2- zla nazwa serwera, 3 - domena w zapytaniu nie istnieje, 4 - serwer nie obs³uguje tego rodzaju zapytania, 5 - serwer odmawia wykonac zapytanie ze wzgledu na wzgledy polityczne xD
          * </pre>
          *
          * <code>optional int32 RCODE = 9;</code>
@@ -1969,13 +2290,485 @@ public final class ProtosMessageDNS {
           onChanged();
           return this;
         }
+
+        private core.ProtosMessageDNS.MessageDNS.Question qUESTIONFIELD_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Question, core.ProtosMessageDNS.MessageDNS.Question.Builder, core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder> qUESTIONFIELDBuilder_;
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public boolean hasQUESTIONFIELD() {
+          return ((bitField0_ & 0x00002000) == 0x00002000);
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Question getQUESTIONFIELD() {
+          if (qUESTIONFIELDBuilder_ == null) {
+            return qUESTIONFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Question.getDefaultInstance() : qUESTIONFIELD_;
+          } else {
+            return qUESTIONFIELDBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public Builder setQUESTIONFIELD(core.ProtosMessageDNS.MessageDNS.Question value) {
+          if (qUESTIONFIELDBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            qUESTIONFIELD_ = value;
+            onChanged();
+          } else {
+            qUESTIONFIELDBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00002000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public Builder setQUESTIONFIELD(
+            core.ProtosMessageDNS.MessageDNS.Question.Builder builderForValue) {
+          if (qUESTIONFIELDBuilder_ == null) {
+            qUESTIONFIELD_ = builderForValue.build();
+            onChanged();
+          } else {
+            qUESTIONFIELDBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00002000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public Builder mergeQUESTIONFIELD(core.ProtosMessageDNS.MessageDNS.Question value) {
+          if (qUESTIONFIELDBuilder_ == null) {
+            if (((bitField0_ & 0x00002000) == 0x00002000) &&
+                qUESTIONFIELD_ != null &&
+                qUESTIONFIELD_ != core.ProtosMessageDNS.MessageDNS.Question.getDefaultInstance()) {
+              qUESTIONFIELD_ =
+                core.ProtosMessageDNS.MessageDNS.Question.newBuilder(qUESTIONFIELD_).mergeFrom(value).buildPartial();
+            } else {
+              qUESTIONFIELD_ = value;
+            }
+            onChanged();
+          } else {
+            qUESTIONFIELDBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00002000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public Builder clearQUESTIONFIELD() {
+          if (qUESTIONFIELDBuilder_ == null) {
+            qUESTIONFIELD_ = null;
+            onChanged();
+          } else {
+            qUESTIONFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00002000);
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Question.Builder getQUESTIONFIELDBuilder() {
+          bitField0_ |= 0x00002000;
+          onChanged();
+          return getQUESTIONFIELDFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder getQUESTIONFIELDOrBuilder() {
+          if (qUESTIONFIELDBuilder_ != null) {
+            return qUESTIONFIELDBuilder_.getMessageOrBuilder();
+          } else {
+            return qUESTIONFIELD_ == null ?
+                core.ProtosMessageDNS.MessageDNS.Question.getDefaultInstance() : qUESTIONFIELD_;
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Question QUESTION_FIELD = 14;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Question, core.ProtosMessageDNS.MessageDNS.Question.Builder, core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder> 
+            getQUESTIONFIELDFieldBuilder() {
+          if (qUESTIONFIELDBuilder_ == null) {
+            qUESTIONFIELDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                core.ProtosMessageDNS.MessageDNS.Question, core.ProtosMessageDNS.MessageDNS.Question.Builder, core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder>(
+                    getQUESTIONFIELD(),
+                    getParentForChildren(),
+                    isClean());
+            qUESTIONFIELD_ = null;
+          }
+          return qUESTIONFIELDBuilder_;
+        }
+
+        private core.ProtosMessageDNS.MessageDNS.Answer aNSWERFIELD_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Answer, core.ProtosMessageDNS.MessageDNS.Answer.Builder, core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder> aNSWERFIELDBuilder_;
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public boolean hasANSWERFIELD() {
+          return ((bitField0_ & 0x00004000) == 0x00004000);
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Answer getANSWERFIELD() {
+          if (aNSWERFIELDBuilder_ == null) {
+            return aNSWERFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Answer.getDefaultInstance() : aNSWERFIELD_;
+          } else {
+            return aNSWERFIELDBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public Builder setANSWERFIELD(core.ProtosMessageDNS.MessageDNS.Answer value) {
+          if (aNSWERFIELDBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            aNSWERFIELD_ = value;
+            onChanged();
+          } else {
+            aNSWERFIELDBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00004000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public Builder setANSWERFIELD(
+            core.ProtosMessageDNS.MessageDNS.Answer.Builder builderForValue) {
+          if (aNSWERFIELDBuilder_ == null) {
+            aNSWERFIELD_ = builderForValue.build();
+            onChanged();
+          } else {
+            aNSWERFIELDBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00004000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public Builder mergeANSWERFIELD(core.ProtosMessageDNS.MessageDNS.Answer value) {
+          if (aNSWERFIELDBuilder_ == null) {
+            if (((bitField0_ & 0x00004000) == 0x00004000) &&
+                aNSWERFIELD_ != null &&
+                aNSWERFIELD_ != core.ProtosMessageDNS.MessageDNS.Answer.getDefaultInstance()) {
+              aNSWERFIELD_ =
+                core.ProtosMessageDNS.MessageDNS.Answer.newBuilder(aNSWERFIELD_).mergeFrom(value).buildPartial();
+            } else {
+              aNSWERFIELD_ = value;
+            }
+            onChanged();
+          } else {
+            aNSWERFIELDBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00004000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public Builder clearANSWERFIELD() {
+          if (aNSWERFIELDBuilder_ == null) {
+            aNSWERFIELD_ = null;
+            onChanged();
+          } else {
+            aNSWERFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00004000);
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Answer.Builder getANSWERFIELDBuilder() {
+          bitField0_ |= 0x00004000;
+          onChanged();
+          return getANSWERFIELDFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder getANSWERFIELDOrBuilder() {
+          if (aNSWERFIELDBuilder_ != null) {
+            return aNSWERFIELDBuilder_.getMessageOrBuilder();
+          } else {
+            return aNSWERFIELD_ == null ?
+                core.ProtosMessageDNS.MessageDNS.Answer.getDefaultInstance() : aNSWERFIELD_;
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Answer ANSWER_FIELD = 15;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Answer, core.ProtosMessageDNS.MessageDNS.Answer.Builder, core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder> 
+            getANSWERFIELDFieldBuilder() {
+          if (aNSWERFIELDBuilder_ == null) {
+            aNSWERFIELDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                core.ProtosMessageDNS.MessageDNS.Answer, core.ProtosMessageDNS.MessageDNS.Answer.Builder, core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder>(
+                    getANSWERFIELD(),
+                    getParentForChildren(),
+                    isClean());
+            aNSWERFIELD_ = null;
+          }
+          return aNSWERFIELDBuilder_;
+        }
+
+        private core.ProtosMessageDNS.MessageDNS.Authority aUTHORITYFIELD_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Authority, core.ProtosMessageDNS.MessageDNS.Authority.Builder, core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder> aUTHORITYFIELDBuilder_;
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public boolean hasAUTHORITYFIELD() {
+          return ((bitField0_ & 0x00008000) == 0x00008000);
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Authority getAUTHORITYFIELD() {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            return aUTHORITYFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Authority.getDefaultInstance() : aUTHORITYFIELD_;
+          } else {
+            return aUTHORITYFIELDBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public Builder setAUTHORITYFIELD(core.ProtosMessageDNS.MessageDNS.Authority value) {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            aUTHORITYFIELD_ = value;
+            onChanged();
+          } else {
+            aUTHORITYFIELDBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00008000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public Builder setAUTHORITYFIELD(
+            core.ProtosMessageDNS.MessageDNS.Authority.Builder builderForValue) {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            aUTHORITYFIELD_ = builderForValue.build();
+            onChanged();
+          } else {
+            aUTHORITYFIELDBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00008000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public Builder mergeAUTHORITYFIELD(core.ProtosMessageDNS.MessageDNS.Authority value) {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            if (((bitField0_ & 0x00008000) == 0x00008000) &&
+                aUTHORITYFIELD_ != null &&
+                aUTHORITYFIELD_ != core.ProtosMessageDNS.MessageDNS.Authority.getDefaultInstance()) {
+              aUTHORITYFIELD_ =
+                core.ProtosMessageDNS.MessageDNS.Authority.newBuilder(aUTHORITYFIELD_).mergeFrom(value).buildPartial();
+            } else {
+              aUTHORITYFIELD_ = value;
+            }
+            onChanged();
+          } else {
+            aUTHORITYFIELDBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00008000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public Builder clearAUTHORITYFIELD() {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            aUTHORITYFIELD_ = null;
+            onChanged();
+          } else {
+            aUTHORITYFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00008000);
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Authority.Builder getAUTHORITYFIELDBuilder() {
+          bitField0_ |= 0x00008000;
+          onChanged();
+          return getAUTHORITYFIELDFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder getAUTHORITYFIELDOrBuilder() {
+          if (aUTHORITYFIELDBuilder_ != null) {
+            return aUTHORITYFIELDBuilder_.getMessageOrBuilder();
+          } else {
+            return aUTHORITYFIELD_ == null ?
+                core.ProtosMessageDNS.MessageDNS.Authority.getDefaultInstance() : aUTHORITYFIELD_;
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Authority AUTHORITY_FIELD = 16;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Authority, core.ProtosMessageDNS.MessageDNS.Authority.Builder, core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder> 
+            getAUTHORITYFIELDFieldBuilder() {
+          if (aUTHORITYFIELDBuilder_ == null) {
+            aUTHORITYFIELDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                core.ProtosMessageDNS.MessageDNS.Authority, core.ProtosMessageDNS.MessageDNS.Authority.Builder, core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder>(
+                    getAUTHORITYFIELD(),
+                    getParentForChildren(),
+                    isClean());
+            aUTHORITYFIELD_ = null;
+          }
+          return aUTHORITYFIELDBuilder_;
+        }
+
+        private core.ProtosMessageDNS.MessageDNS.Aditional aDITIONALFIELD_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Aditional, core.ProtosMessageDNS.MessageDNS.Aditional.Builder, core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder> aDITIONALFIELDBuilder_;
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public boolean hasADITIONALFIELD() {
+          return ((bitField0_ & 0x00010000) == 0x00010000);
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Aditional getADITIONALFIELD() {
+          if (aDITIONALFIELDBuilder_ == null) {
+            return aDITIONALFIELD_ == null ? core.ProtosMessageDNS.MessageDNS.Aditional.getDefaultInstance() : aDITIONALFIELD_;
+          } else {
+            return aDITIONALFIELDBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public Builder setADITIONALFIELD(core.ProtosMessageDNS.MessageDNS.Aditional value) {
+          if (aDITIONALFIELDBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            aDITIONALFIELD_ = value;
+            onChanged();
+          } else {
+            aDITIONALFIELDBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00010000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public Builder setADITIONALFIELD(
+            core.ProtosMessageDNS.MessageDNS.Aditional.Builder builderForValue) {
+          if (aDITIONALFIELDBuilder_ == null) {
+            aDITIONALFIELD_ = builderForValue.build();
+            onChanged();
+          } else {
+            aDITIONALFIELDBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00010000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public Builder mergeADITIONALFIELD(core.ProtosMessageDNS.MessageDNS.Aditional value) {
+          if (aDITIONALFIELDBuilder_ == null) {
+            if (((bitField0_ & 0x00010000) == 0x00010000) &&
+                aDITIONALFIELD_ != null &&
+                aDITIONALFIELD_ != core.ProtosMessageDNS.MessageDNS.Aditional.getDefaultInstance()) {
+              aDITIONALFIELD_ =
+                core.ProtosMessageDNS.MessageDNS.Aditional.newBuilder(aDITIONALFIELD_).mergeFrom(value).buildPartial();
+            } else {
+              aDITIONALFIELD_ = value;
+            }
+            onChanged();
+          } else {
+            aDITIONALFIELDBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00010000;
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public Builder clearADITIONALFIELD() {
+          if (aDITIONALFIELDBuilder_ == null) {
+            aDITIONALFIELD_ = null;
+            onChanged();
+          } else {
+            aDITIONALFIELDBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00010000);
+          return this;
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.Aditional.Builder getADITIONALFIELDBuilder() {
+          bitField0_ |= 0x00010000;
+          onChanged();
+          return getADITIONALFIELDFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        public core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder getADITIONALFIELDOrBuilder() {
+          if (aDITIONALFIELDBuilder_ != null) {
+            return aDITIONALFIELDBuilder_.getMessageOrBuilder();
+          } else {
+            return aDITIONALFIELD_ == null ?
+                core.ProtosMessageDNS.MessageDNS.Aditional.getDefaultInstance() : aDITIONALFIELD_;
+          }
+        }
+        /**
+         * <code>optional .core.MessageDNS.Aditional ADITIONAL_FIELD = 17;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            core.ProtosMessageDNS.MessageDNS.Aditional, core.ProtosMessageDNS.MessageDNS.Aditional.Builder, core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder> 
+            getADITIONALFIELDFieldBuilder() {
+          if (aDITIONALFIELDBuilder_ == null) {
+            aDITIONALFIELDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                core.ProtosMessageDNS.MessageDNS.Aditional, core.ProtosMessageDNS.MessageDNS.Aditional.Builder, core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder>(
+                    getADITIONALFIELD(),
+                    getParentForChildren(),
+                    isClean());
+            aDITIONALFIELD_ = null;
+          }
+          return aDITIONALFIELDBuilder_;
+        }
         public final Builder setUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         public final Builder mergeUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -1993,22 +2786,22 @@ public final class ProtosMessageDNS {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final Parser<Header>
-          PARSER = new AbstractParser<Header>() {
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Header>
+          PARSER = new com.google.protobuf.AbstractParser<Header>() {
         public Header parsePartialFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
-            throws InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
             return new Header(input, extensionRegistry);
         }
       };
 
-      public static Parser<Header> parser() {
+      public static com.google.protobuf.Parser<Header> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public Parser<Header> getParserForType() {
+      public com.google.protobuf.Parser<Header> getParserForType() {
         return PARSER;
       }
 
@@ -2020,7 +2813,7 @@ public final class ProtosMessageDNS {
 
     public interface QuestionOrBuilder extends
         // @@protoc_insertion_point(interface_extends:core.MessageDNS.Question)
-        MessageOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
@@ -2045,7 +2838,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QNAME = 1;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getQNAMEBytes();
 
       /**
@@ -2071,7 +2864,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QTYPE = 2;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getQTYPEBytes();
 
       /**
@@ -2097,7 +2890,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QCLASS = 3;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getQCLASSBytes();
     }
     /**
@@ -2108,11 +2901,11 @@ public final class ProtosMessageDNS {
      * Protobuf type {@code core.MessageDNS.Question}
      */
     public  static final class Question extends
-        GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:core.MessageDNS.Question)
         QuestionOrBuilder {
       // Use Question.newBuilder() to construct.
-      private Question(GeneratedMessageV3.Builder<?> builder) {
+      private Question(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private Question() {
@@ -2122,18 +2915,18 @@ public final class ProtosMessageDNS {
       }
 
       @java.lang.Override
-      public final UnknownFieldSet
+      public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       private Question(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        UnknownFieldSet.Builder unknownFields =
-            UnknownFieldSet.newBuilder();
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -2150,41 +2943,41 @@ public final class ProtosMessageDNS {
                 break;
               }
               case 10: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
                 qNAME_ = bs;
                 break;
               }
               case 18: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
                 qTYPE_ = bs;
                 break;
               }
               case 26: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000004;
                 qCLASS_ = bs;
                 break;
               }
             }
           }
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new InvalidProtocolBufferException(
+          throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Question_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Question_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -2216,8 +3009,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             qNAME_ = s;
@@ -2232,17 +3025,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QNAME = 1;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getQNAMEBytes() {
         java.lang.Object ref = qNAME_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           qNAME_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -2270,8 +3063,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             qTYPE_ = s;
@@ -2286,17 +3079,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QTYPE = 2;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getQTYPEBytes() {
         java.lang.Object ref = qTYPE_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           qTYPE_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -2324,8 +3117,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             qCLASS_ = s;
@@ -2340,17 +3133,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string QCLASS = 3;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getQCLASSBytes() {
         java.lang.Object ref = qCLASS_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           qCLASS_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -2364,16 +3157,16 @@ public final class ProtosMessageDNS {
         return true;
       }
 
-      public void writeTo(CodedOutputStream output)
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          GeneratedMessageV3.writeString(output, 1, qNAME_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, qNAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          GeneratedMessageV3.writeString(output, 2, qTYPE_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, qTYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          GeneratedMessageV3.writeString(output, 3, qCLASS_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qCLASS_);
         }
         unknownFields.writeTo(output);
       }
@@ -2384,13 +3177,13 @@ public final class ProtosMessageDNS {
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += GeneratedMessageV3.computeStringSize(1, qNAME_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, qNAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += GeneratedMessageV3.computeStringSize(2, qTYPE_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, qTYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += GeneratedMessageV3.computeStringSize(3, qCLASS_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qCLASS_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2453,61 +3246,61 @@ public final class ProtosMessageDNS {
       }
 
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
-          ByteString data)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
-          ByteString data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(byte[] data)
-          throws InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
           byte[] data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseDelimitedFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
-          CodedInputStream input)
+          com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Question parseFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
@@ -2525,7 +3318,7 @@ public final class ProtosMessageDNS {
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -2537,15 +3330,15 @@ public final class ProtosMessageDNS {
        * Protobuf type {@code core.MessageDNS.Question}
        */
       public static final class Builder extends
-          GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:core.MessageDNS.Question)
           core.ProtosMessageDNS.MessageDNS.QuestionOrBuilder {
-        public static final Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Question_descriptor;
         }
 
-        protected GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Question_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -2558,12 +3351,12 @@ public final class ProtosMessageDNS {
         }
 
         private Builder(
-            GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (GeneratedMessageV3
+          if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
           }
         }
@@ -2578,7 +3371,7 @@ public final class ProtosMessageDNS {
           return this;
         }
 
-        public Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Question_descriptor;
         }
@@ -2620,29 +3413,29 @@ public final class ProtosMessageDNS {
           return (Builder) super.clone();
         }
         public Builder setField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
-            Descriptors.FieldDescriptor field) {
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
         public Builder clearOneof(
-            Descriptors.OneofDescriptor oneof) {
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
         public Builder setRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
-        public Builder mergeFrom(Message other) {
+        public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof core.ProtosMessageDNS.MessageDNS.Question) {
             return mergeFrom((core.ProtosMessageDNS.MessageDNS.Question)other);
           } else {
@@ -2678,13 +3471,13 @@ public final class ProtosMessageDNS {
         }
 
         public Builder mergeFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           core.ProtosMessageDNS.MessageDNS.Question parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (InvalidProtocolBufferException e) {
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (core.ProtosMessageDNS.MessageDNS.Question) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -2717,8 +3510,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getQNAME() {
           java.lang.Object ref = qNAME_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               qNAME_ = s;
@@ -2735,17 +3528,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string QNAME = 1;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getQNAMEBytes() {
           java.lang.Object ref = qNAME_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             qNAME_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -2786,7 +3579,7 @@ public final class ProtosMessageDNS {
          * <code>optional string QNAME = 1;</code>
          */
         public Builder setQNAMEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -2817,8 +3610,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getQTYPE() {
           java.lang.Object ref = qTYPE_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               qTYPE_ = s;
@@ -2835,17 +3628,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string QTYPE = 2;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getQTYPEBytes() {
           java.lang.Object ref = qTYPE_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             qTYPE_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -2886,7 +3679,7 @@ public final class ProtosMessageDNS {
          * <code>optional string QTYPE = 2;</code>
          */
         public Builder setQTYPEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -2917,8 +3710,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getQCLASS() {
           java.lang.Object ref = qCLASS_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               qCLASS_ = s;
@@ -2935,17 +3728,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string QCLASS = 3;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getQCLASSBytes() {
           java.lang.Object ref = qCLASS_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             qCLASS_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -2986,7 +3779,7 @@ public final class ProtosMessageDNS {
          * <code>optional string QCLASS = 3;</code>
          */
         public Builder setQCLASSBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -2996,12 +3789,12 @@ public final class ProtosMessageDNS {
           return this;
         }
         public final Builder setUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         public final Builder mergeUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -3019,22 +3812,22 @@ public final class ProtosMessageDNS {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final Parser<Question>
-          PARSER = new AbstractParser<Question>() {
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Question>
+          PARSER = new com.google.protobuf.AbstractParser<Question>() {
         public Question parsePartialFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
-            throws InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
             return new Question(input, extensionRegistry);
         }
       };
 
-      public static Parser<Question> parser() {
+      public static com.google.protobuf.Parser<Question> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public Parser<Question> getParserForType() {
+      public com.google.protobuf.Parser<Question> getParserForType() {
         return PARSER;
       }
 
@@ -3046,7 +3839,7 @@ public final class ProtosMessageDNS {
 
     public interface AnswerOrBuilder extends
         // @@protoc_insertion_point(interface_extends:core.MessageDNS.Answer)
-        MessageOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
@@ -3071,7 +3864,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getNAMEBytes();
 
       /**
@@ -3097,7 +3890,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getTYPEBytes();
 
       /**
@@ -3123,7 +3916,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getCLASSBytes();
 
       /**
@@ -3151,11 +3944,11 @@ public final class ProtosMessageDNS {
      * Protobuf type {@code core.MessageDNS.Answer}
      */
     public  static final class Answer extends
-        GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:core.MessageDNS.Answer)
         AnswerOrBuilder {
       // Use Answer.newBuilder() to construct.
-      private Answer(GeneratedMessageV3.Builder<?> builder) {
+      private Answer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private Answer() {
@@ -3166,18 +3959,18 @@ public final class ProtosMessageDNS {
       }
 
       @java.lang.Override
-      public final UnknownFieldSet
+      public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       private Answer(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        UnknownFieldSet.Builder unknownFields =
-            UnknownFieldSet.newBuilder();
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -3194,19 +3987,19 @@ public final class ProtosMessageDNS {
                 break;
               }
               case 10: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
                 nAME_ = bs;
                 break;
               }
               case 18: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
                 tYPE_ = bs;
                 break;
               }
               case 26: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000004;
                 cLASS_ = bs;
                 break;
@@ -3218,22 +4011,22 @@ public final class ProtosMessageDNS {
               }
             }
           }
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new InvalidProtocolBufferException(
+          throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Answer_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Answer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -3265,8 +4058,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             nAME_ = s;
@@ -3281,17 +4074,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getNAMEBytes() {
         java.lang.Object ref = nAME_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           nAME_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -3319,8 +4112,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             tYPE_ = s;
@@ -3335,17 +4128,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getTYPEBytes() {
         java.lang.Object ref = tYPE_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tYPE_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -3373,8 +4166,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             cLASS_ = s;
@@ -3389,17 +4182,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getCLASSBytes() {
         java.lang.Object ref = cLASS_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           cLASS_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -3436,16 +4229,16 @@ public final class ProtosMessageDNS {
         return true;
       }
 
-      public void writeTo(CodedOutputStream output)
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          GeneratedMessageV3.writeString(output, 1, nAME_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          GeneratedMessageV3.writeString(output, 2, tYPE_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          GeneratedMessageV3.writeString(output, 3, cLASS_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           output.writeInt32(4, tTL_);
@@ -3459,16 +4252,16 @@ public final class ProtosMessageDNS {
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += GeneratedMessageV3.computeStringSize(1, nAME_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += GeneratedMessageV3.computeStringSize(2, tYPE_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += GeneratedMessageV3.computeStringSize(3, cLASS_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(4, tTL_);
         }
         size += unknownFields.getSerializedSize();
@@ -3541,61 +4334,61 @@ public final class ProtosMessageDNS {
       }
 
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
-          ByteString data)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
-          ByteString data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(byte[] data)
-          throws InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
           byte[] data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseDelimitedFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
-          CodedInputStream input)
+          com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Answer parseFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
@@ -3613,7 +4406,7 @@ public final class ProtosMessageDNS {
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -3625,15 +4418,15 @@ public final class ProtosMessageDNS {
        * Protobuf type {@code core.MessageDNS.Answer}
        */
       public static final class Builder extends
-          GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:core.MessageDNS.Answer)
           core.ProtosMessageDNS.MessageDNS.AnswerOrBuilder {
-        public static final Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Answer_descriptor;
         }
 
-        protected GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Answer_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -3646,12 +4439,12 @@ public final class ProtosMessageDNS {
         }
 
         private Builder(
-            GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (GeneratedMessageV3
+          if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
           }
         }
@@ -3668,7 +4461,7 @@ public final class ProtosMessageDNS {
           return this;
         }
 
-        public Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Answer_descriptor;
         }
@@ -3714,29 +4507,29 @@ public final class ProtosMessageDNS {
           return (Builder) super.clone();
         }
         public Builder setField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
-            Descriptors.FieldDescriptor field) {
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
         public Builder clearOneof(
-            Descriptors.OneofDescriptor oneof) {
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
         public Builder setRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
-        public Builder mergeFrom(Message other) {
+        public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof core.ProtosMessageDNS.MessageDNS.Answer) {
             return mergeFrom((core.ProtosMessageDNS.MessageDNS.Answer)other);
           } else {
@@ -3775,13 +4568,13 @@ public final class ProtosMessageDNS {
         }
 
         public Builder mergeFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           core.ProtosMessageDNS.MessageDNS.Answer parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (InvalidProtocolBufferException e) {
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (core.ProtosMessageDNS.MessageDNS.Answer) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -3814,8 +4607,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getNAME() {
           java.lang.Object ref = nAME_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               nAME_ = s;
@@ -3832,17 +4625,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string NAME = 1;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getNAMEBytes() {
           java.lang.Object ref = nAME_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             nAME_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -3883,7 +4676,7 @@ public final class ProtosMessageDNS {
          * <code>optional string NAME = 1;</code>
          */
         public Builder setNAMEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -3914,8 +4707,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getTYPE() {
           java.lang.Object ref = tYPE_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               tYPE_ = s;
@@ -3932,17 +4725,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string TYPE = 2;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getTYPEBytes() {
           java.lang.Object ref = tYPE_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             tYPE_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -3983,7 +4776,7 @@ public final class ProtosMessageDNS {
          * <code>optional string TYPE = 2;</code>
          */
         public Builder setTYPEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -4014,8 +4807,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getCLASS() {
           java.lang.Object ref = cLASS_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               cLASS_ = s;
@@ -4032,17 +4825,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string CLASS = 3;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getCLASSBytes() {
           java.lang.Object ref = cLASS_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             cLASS_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -4083,7 +4876,7 @@ public final class ProtosMessageDNS {
          * <code>optional string CLASS = 3;</code>
          */
         public Builder setCLASSBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -4141,12 +4934,12 @@ public final class ProtosMessageDNS {
           return this;
         }
         public final Builder setUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         public final Builder mergeUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -4164,22 +4957,22 @@ public final class ProtosMessageDNS {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final Parser<Answer>
-          PARSER = new AbstractParser<Answer>() {
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Answer>
+          PARSER = new com.google.protobuf.AbstractParser<Answer>() {
         public Answer parsePartialFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
-            throws InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
             return new Answer(input, extensionRegistry);
         }
       };
 
-      public static Parser<Answer> parser() {
+      public static com.google.protobuf.Parser<Answer> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public Parser<Answer> getParserForType() {
+      public com.google.protobuf.Parser<Answer> getParserForType() {
         return PARSER;
       }
 
@@ -4191,7 +4984,7 @@ public final class ProtosMessageDNS {
 
     public interface AuthorityOrBuilder extends
         // @@protoc_insertion_point(interface_extends:core.MessageDNS.Authority)
-        MessageOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
@@ -4216,7 +5009,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getNAMEBytes();
 
       /**
@@ -4242,7 +5035,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getTYPEBytes();
 
       /**
@@ -4268,7 +5061,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getCLASSBytes();
 
       /**
@@ -4296,11 +5089,11 @@ public final class ProtosMessageDNS {
      * Protobuf type {@code core.MessageDNS.Authority}
      */
     public  static final class Authority extends
-        GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:core.MessageDNS.Authority)
         AuthorityOrBuilder {
       // Use Authority.newBuilder() to construct.
-      private Authority(GeneratedMessageV3.Builder<?> builder) {
+      private Authority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private Authority() {
@@ -4311,18 +5104,18 @@ public final class ProtosMessageDNS {
       }
 
       @java.lang.Override
-      public final UnknownFieldSet
+      public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       private Authority(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        UnknownFieldSet.Builder unknownFields =
-            UnknownFieldSet.newBuilder();
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -4339,19 +5132,19 @@ public final class ProtosMessageDNS {
                 break;
               }
               case 10: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
                 nAME_ = bs;
                 break;
               }
               case 18: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
                 tYPE_ = bs;
                 break;
               }
               case 26: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000004;
                 cLASS_ = bs;
                 break;
@@ -4363,22 +5156,22 @@ public final class ProtosMessageDNS {
               }
             }
           }
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new InvalidProtocolBufferException(
+          throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Authority_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Authority_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -4410,8 +5203,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             nAME_ = s;
@@ -4426,17 +5219,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getNAMEBytes() {
         java.lang.Object ref = nAME_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           nAME_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -4464,8 +5257,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             tYPE_ = s;
@@ -4480,17 +5273,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getTYPEBytes() {
         java.lang.Object ref = tYPE_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tYPE_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -4518,8 +5311,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             cLASS_ = s;
@@ -4534,17 +5327,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getCLASSBytes() {
         java.lang.Object ref = cLASS_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           cLASS_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -4581,16 +5374,16 @@ public final class ProtosMessageDNS {
         return true;
       }
 
-      public void writeTo(CodedOutputStream output)
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          GeneratedMessageV3.writeString(output, 1, nAME_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          GeneratedMessageV3.writeString(output, 2, tYPE_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          GeneratedMessageV3.writeString(output, 3, cLASS_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           output.writeInt32(4, tTL_);
@@ -4604,16 +5397,16 @@ public final class ProtosMessageDNS {
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += GeneratedMessageV3.computeStringSize(1, nAME_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += GeneratedMessageV3.computeStringSize(2, tYPE_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += GeneratedMessageV3.computeStringSize(3, cLASS_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(4, tTL_);
         }
         size += unknownFields.getSerializedSize();
@@ -4686,61 +5479,61 @@ public final class ProtosMessageDNS {
       }
 
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
-          ByteString data)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
-          ByteString data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(byte[] data)
-          throws InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
           byte[] data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseDelimitedFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
-          CodedInputStream input)
+          com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Authority parseFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
@@ -4758,7 +5551,7 @@ public final class ProtosMessageDNS {
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -4770,15 +5563,15 @@ public final class ProtosMessageDNS {
        * Protobuf type {@code core.MessageDNS.Authority}
        */
       public static final class Builder extends
-          GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:core.MessageDNS.Authority)
           core.ProtosMessageDNS.MessageDNS.AuthorityOrBuilder {
-        public static final Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Authority_descriptor;
         }
 
-        protected GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Authority_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -4791,12 +5584,12 @@ public final class ProtosMessageDNS {
         }
 
         private Builder(
-            GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (GeneratedMessageV3
+          if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
           }
         }
@@ -4813,7 +5606,7 @@ public final class ProtosMessageDNS {
           return this;
         }
 
-        public Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Authority_descriptor;
         }
@@ -4859,29 +5652,29 @@ public final class ProtosMessageDNS {
           return (Builder) super.clone();
         }
         public Builder setField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
-            Descriptors.FieldDescriptor field) {
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
         public Builder clearOneof(
-            Descriptors.OneofDescriptor oneof) {
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
         public Builder setRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
-        public Builder mergeFrom(Message other) {
+        public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof core.ProtosMessageDNS.MessageDNS.Authority) {
             return mergeFrom((core.ProtosMessageDNS.MessageDNS.Authority)other);
           } else {
@@ -4920,13 +5713,13 @@ public final class ProtosMessageDNS {
         }
 
         public Builder mergeFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           core.ProtosMessageDNS.MessageDNS.Authority parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (InvalidProtocolBufferException e) {
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (core.ProtosMessageDNS.MessageDNS.Authority) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -4959,8 +5752,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getNAME() {
           java.lang.Object ref = nAME_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               nAME_ = s;
@@ -4977,17 +5770,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string NAME = 1;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getNAMEBytes() {
           java.lang.Object ref = nAME_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             nAME_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -5028,7 +5821,7 @@ public final class ProtosMessageDNS {
          * <code>optional string NAME = 1;</code>
          */
         public Builder setNAMEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -5059,8 +5852,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getTYPE() {
           java.lang.Object ref = tYPE_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               tYPE_ = s;
@@ -5077,17 +5870,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string TYPE = 2;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getTYPEBytes() {
           java.lang.Object ref = tYPE_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             tYPE_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -5128,7 +5921,7 @@ public final class ProtosMessageDNS {
          * <code>optional string TYPE = 2;</code>
          */
         public Builder setTYPEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -5159,8 +5952,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getCLASS() {
           java.lang.Object ref = cLASS_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               cLASS_ = s;
@@ -5177,17 +5970,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string CLASS = 3;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getCLASSBytes() {
           java.lang.Object ref = cLASS_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             cLASS_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -5228,7 +6021,7 @@ public final class ProtosMessageDNS {
          * <code>optional string CLASS = 3;</code>
          */
         public Builder setCLASSBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -5286,12 +6079,12 @@ public final class ProtosMessageDNS {
           return this;
         }
         public final Builder setUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         public final Builder mergeUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -5309,22 +6102,22 @@ public final class ProtosMessageDNS {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final Parser<Authority>
-          PARSER = new AbstractParser<Authority>() {
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Authority>
+          PARSER = new com.google.protobuf.AbstractParser<Authority>() {
         public Authority parsePartialFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
-            throws InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
             return new Authority(input, extensionRegistry);
         }
       };
 
-      public static Parser<Authority> parser() {
+      public static com.google.protobuf.Parser<Authority> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public Parser<Authority> getParserForType() {
+      public com.google.protobuf.Parser<Authority> getParserForType() {
         return PARSER;
       }
 
@@ -5336,7 +6129,7 @@ public final class ProtosMessageDNS {
 
     public interface AditionalOrBuilder extends
         // @@protoc_insertion_point(interface_extends:core.MessageDNS.Aditional)
-        MessageOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
@@ -5361,7 +6154,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getNAMEBytes();
 
       /**
@@ -5387,7 +6180,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getTYPEBytes();
 
       /**
@@ -5413,7 +6206,7 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      ByteString
+      com.google.protobuf.ByteString
           getCLASSBytes();
 
       /**
@@ -5441,11 +6234,11 @@ public final class ProtosMessageDNS {
      * Protobuf type {@code core.MessageDNS.Aditional}
      */
     public  static final class Aditional extends
-        GeneratedMessageV3 implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:core.MessageDNS.Aditional)
         AditionalOrBuilder {
       // Use Aditional.newBuilder() to construct.
-      private Aditional(GeneratedMessageV3.Builder<?> builder) {
+      private Aditional(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
       private Aditional() {
@@ -5456,18 +6249,18 @@ public final class ProtosMessageDNS {
       }
 
       @java.lang.Override
-      public final UnknownFieldSet
+      public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
         return this.unknownFields;
       }
       private Aditional(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        UnknownFieldSet.Builder unknownFields =
-            UnknownFieldSet.newBuilder();
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -5484,19 +6277,19 @@ public final class ProtosMessageDNS {
                 break;
               }
               case 10: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
                 nAME_ = bs;
                 break;
               }
               case 18: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
                 tYPE_ = bs;
                 break;
               }
               case 26: {
-                ByteString bs = input.readBytes();
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000004;
                 cLASS_ = bs;
                 break;
@@ -5508,22 +6301,22 @@ public final class ProtosMessageDNS {
               }
             }
           }
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new InvalidProtocolBufferException(
+          throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Aditional_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_Aditional_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -5555,8 +6348,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             nAME_ = s;
@@ -5571,17 +6364,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string NAME = 1;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getNAMEBytes() {
         java.lang.Object ref = nAME_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           nAME_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -5609,8 +6402,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             tYPE_ = s;
@@ -5625,17 +6418,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string TYPE = 2;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getTYPEBytes() {
         java.lang.Object ref = tYPE_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tYPE_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -5663,8 +6456,8 @@ public final class ProtosMessageDNS {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          ByteString bs = 
-              (ByteString) ref;
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
             cLASS_ = s;
@@ -5679,17 +6472,17 @@ public final class ProtosMessageDNS {
        *
        * <code>optional string CLASS = 3;</code>
        */
-      public ByteString
+      public com.google.protobuf.ByteString
           getCLASSBytes() {
         java.lang.Object ref = cLASS_;
         if (ref instanceof java.lang.String) {
-          ByteString b = 
-              ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           cLASS_ = b;
           return b;
         } else {
-          return (ByteString) ref;
+          return (com.google.protobuf.ByteString) ref;
         }
       }
 
@@ -5726,16 +6519,16 @@ public final class ProtosMessageDNS {
         return true;
       }
 
-      public void writeTo(CodedOutputStream output)
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          GeneratedMessageV3.writeString(output, 1, nAME_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          GeneratedMessageV3.writeString(output, 2, tYPE_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          GeneratedMessageV3.writeString(output, 3, cLASS_);
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           output.writeInt32(4, tTL_);
@@ -5749,16 +6542,16 @@ public final class ProtosMessageDNS {
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += GeneratedMessageV3.computeStringSize(1, nAME_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nAME_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += GeneratedMessageV3.computeStringSize(2, tYPE_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tYPE_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += GeneratedMessageV3.computeStringSize(3, cLASS_);
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cLASS_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += CodedOutputStream
+          size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(4, tTL_);
         }
         size += unknownFields.getSerializedSize();
@@ -5831,61 +6624,61 @@ public final class ProtosMessageDNS {
       }
 
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
-          ByteString data)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
-          ByteString data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(byte[] data)
-          throws InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
           byte[] data,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseDelimitedFrom(
           java.io.InputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
-          CodedInputStream input)
+          com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
       public static core.ProtosMessageDNS.MessageDNS.Aditional parseFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return GeneratedMessageV3
+        return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
@@ -5903,7 +6696,7 @@ public final class ProtosMessageDNS {
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -5915,15 +6708,15 @@ public final class ProtosMessageDNS {
        * Protobuf type {@code core.MessageDNS.Aditional}
        */
       public static final class Builder extends
-          GeneratedMessageV3.Builder<Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:core.MessageDNS.Aditional)
           core.ProtosMessageDNS.MessageDNS.AditionalOrBuilder {
-        public static final Descriptors.Descriptor
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Aditional_descriptor;
         }
 
-        protected GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Aditional_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -5936,12 +6729,12 @@ public final class ProtosMessageDNS {
         }
 
         private Builder(
-            GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (GeneratedMessageV3
+          if (com.google.protobuf.GeneratedMessageV3
                   .alwaysUseFieldBuilders) {
           }
         }
@@ -5958,7 +6751,7 @@ public final class ProtosMessageDNS {
           return this;
         }
 
-        public Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return core.ProtosMessageDNS.internal_static_core_MessageDNS_Aditional_descriptor;
         }
@@ -6004,29 +6797,29 @@ public final class ProtosMessageDNS {
           return (Builder) super.clone();
         }
         public Builder setField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
-            Descriptors.FieldDescriptor field) {
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
         public Builder clearOneof(
-            Descriptors.OneofDescriptor oneof) {
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
         public Builder setRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
-            Descriptors.FieldDescriptor field,
+            com.google.protobuf.Descriptors.FieldDescriptor field,
             Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
-        public Builder mergeFrom(Message other) {
+        public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof core.ProtosMessageDNS.MessageDNS.Aditional) {
             return mergeFrom((core.ProtosMessageDNS.MessageDNS.Aditional)other);
           } else {
@@ -6065,13 +6858,13 @@ public final class ProtosMessageDNS {
         }
 
         public Builder mergeFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
           core.ProtosMessageDNS.MessageDNS.Aditional parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (InvalidProtocolBufferException e) {
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (core.ProtosMessageDNS.MessageDNS.Aditional) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
@@ -6104,8 +6897,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getNAME() {
           java.lang.Object ref = nAME_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               nAME_ = s;
@@ -6122,17 +6915,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string NAME = 1;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getNAMEBytes() {
           java.lang.Object ref = nAME_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             nAME_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -6173,7 +6966,7 @@ public final class ProtosMessageDNS {
          * <code>optional string NAME = 1;</code>
          */
         public Builder setNAMEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -6204,8 +6997,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getTYPE() {
           java.lang.Object ref = tYPE_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               tYPE_ = s;
@@ -6222,17 +7015,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string TYPE = 2;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getTYPEBytes() {
           java.lang.Object ref = tYPE_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             tYPE_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -6273,7 +7066,7 @@ public final class ProtosMessageDNS {
          * <code>optional string TYPE = 2;</code>
          */
         public Builder setTYPEBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -6304,8 +7097,8 @@ public final class ProtosMessageDNS {
         public java.lang.String getCLASS() {
           java.lang.Object ref = cLASS_;
           if (!(ref instanceof java.lang.String)) {
-            ByteString bs =
-                (ByteString) ref;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (bs.isValidUtf8()) {
               cLASS_ = s;
@@ -6322,17 +7115,17 @@ public final class ProtosMessageDNS {
          *
          * <code>optional string CLASS = 3;</code>
          */
-        public ByteString
+        public com.google.protobuf.ByteString
             getCLASSBytes() {
           java.lang.Object ref = cLASS_;
           if (ref instanceof String) {
-            ByteString b = 
-                ByteString.copyFromUtf8(
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             cLASS_ = b;
             return b;
           } else {
-            return (ByteString) ref;
+            return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
@@ -6373,7 +7166,7 @@ public final class ProtosMessageDNS {
          * <code>optional string CLASS = 3;</code>
          */
         public Builder setCLASSBytes(
-            ByteString value) {
+            com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -6431,12 +7224,12 @@ public final class ProtosMessageDNS {
           return this;
         }
         public final Builder setUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
         }
 
         public final Builder mergeUnknownFields(
-            final UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
@@ -6454,22 +7247,22 @@ public final class ProtosMessageDNS {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final Parser<Aditional>
-          PARSER = new AbstractParser<Aditional>() {
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Aditional>
+          PARSER = new com.google.protobuf.AbstractParser<Aditional>() {
         public Aditional parsePartialFrom(
-            CodedInputStream input,
-            ExtensionRegistryLite extensionRegistry)
-            throws InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
             return new Aditional(input, extensionRegistry);
         }
       };
 
-      public static Parser<Aditional> parser() {
+      public static com.google.protobuf.Parser<Aditional> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public Parser<Aditional> getParserForType() {
+      public com.google.protobuf.Parser<Aditional> getParserForType() {
         return PARSER;
       }
 
@@ -6489,7 +7282,7 @@ public final class ProtosMessageDNS {
       return true;
     }
 
-    public void writeTo(CodedOutputStream output)
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
@@ -6533,61 +7326,61 @@ public final class ProtosMessageDNS {
     }
 
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
-        ByteString data)
-        throws InvalidProtocolBufferException {
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
-        ByteString data,
-        ExtensionRegistryLite extensionRegistry)
-        throws InvalidProtocolBufferException {
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(byte[] data)
-        throws InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
         byte[] data,
-        ExtensionRegistryLite extensionRegistry)
-        throws InvalidProtocolBufferException {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
         java.io.InputStream input,
-        ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static core.ProtosMessageDNS.MessageDNS parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static core.ProtosMessageDNS.MessageDNS parseDelimitedFrom(
         java.io.InputStream input,
-        ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
-        CodedInputStream input)
+        com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static core.ProtosMessageDNS.MessageDNS parseFrom(
-        CodedInputStream input,
-        ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -6605,7 +7398,7 @@ public final class ProtosMessageDNS {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6613,15 +7406,15 @@ public final class ProtosMessageDNS {
      * Protobuf type {@code core.MessageDNS}
      */
     public static final class Builder extends
-        GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:core.MessageDNS)
         core.ProtosMessageDNS.MessageDNSOrBuilder {
-      public static final Descriptors.Descriptor
+      public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_descriptor;
       }
 
-      protected GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -6634,12 +7427,12 @@ public final class ProtosMessageDNS {
       }
 
       private Builder(
-          GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (GeneratedMessageV3
+        if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -6648,7 +7441,7 @@ public final class ProtosMessageDNS {
         return this;
       }
 
-      public Descriptors.Descriptor
+      public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return core.ProtosMessageDNS.internal_static_core_MessageDNS_descriptor;
       }
@@ -6675,29 +7468,29 @@ public final class ProtosMessageDNS {
         return (Builder) super.clone();
       }
       public Builder setField(
-          Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
-          Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
       public Builder clearOneof(
-          Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
       public Builder setRepeatedField(
-          Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
-          Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
-      public Builder mergeFrom(Message other) {
+      public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof core.ProtosMessageDNS.MessageDNS) {
           return mergeFrom((core.ProtosMessageDNS.MessageDNS)other);
         } else {
@@ -6718,13 +7511,13 @@ public final class ProtosMessageDNS {
       }
 
       public Builder mergeFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         core.ProtosMessageDNS.MessageDNS parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (core.ProtosMessageDNS.MessageDNS) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -6735,19 +7528,14 @@ public final class ProtosMessageDNS {
         return this;
       }
       public final Builder setUnknownFields(
-          final UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       public final Builder mergeUnknownFields(
-          final UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
-	public Builder addHeader(core.ProtosMessageDNS.MessageDNS.Header.Builder newBuilder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
       // @@protoc_insertion_point(builder_scope:core.MessageDNS)
@@ -6763,22 +7551,22 @@ public final class ProtosMessageDNS {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final Parser<MessageDNS>
-        PARSER = new AbstractParser<MessageDNS>() {
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageDNS>
+        PARSER = new com.google.protobuf.AbstractParser<MessageDNS>() {
       public MessageDNS parsePartialFrom(
-          CodedInputStream input,
-          ExtensionRegistryLite extensionRegistry)
-          throws InvalidProtocolBufferException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
           return new MessageDNS(input, extensionRegistry);
       }
     };
 
-    public static Parser<MessageDNS> parser() {
+    public static com.google.protobuf.Parser<MessageDNS> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public Parser<MessageDNS> getParserForType() {
+    public com.google.protobuf.Parser<MessageDNS> getParserForType() {
       return PARSER;
     }
 
@@ -6788,105 +7576,110 @@ public final class ProtosMessageDNS {
 
   }
 
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_fieldAccessorTable;
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_Header_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_Header_fieldAccessorTable;
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_Question_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_Question_fieldAccessorTable;
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_Answer_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_Answer_fieldAccessorTable;
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_Authority_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_Authority_fieldAccessorTable;
-  private static final Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_core_MessageDNS_Aditional_descriptor;
   private static final 
-    GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_core_MessageDNS_Aditional_fieldAccessorTable;
 
-  public static Descriptors.FileDescriptor
+  public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020MessageDNS.proto\022\004core\"\323\003\n\nMessageDNS\032" +
-      "\276\001\n\006Header\022\n\n\002id\030\001 \001(\005\022\n\n\002QR\030\002 \001(\010\022\016\n\006Op" +
+      "\n\020MessageDNS.proto\022\004core\"\237\005\n\nMessageDNS\032" +
+      "\212\003\n\006Header\022\n\n\002id\030\001 \001(\005\022\n\n\002QR\030\002 \001(\010\022\016\n\006Op" +
       "code\030\003 \001(\005\022\n\n\002AA\030\004 \001(\010\022\n\n\002TC\030\005 \001(\010\022\n\n\002RD" +
       "\030\006 \001(\010\022\n\n\002RA\030\007 \001(\010\022\t\n\001Z\030\010 \001(\010\022\r\n\005RCODE\030\t" +
       " \001(\005\022\017\n\007QDCOUNT\030\n \001(\005\022\017\n\007ANCOUNT\030\013 \001(\005\022\017" +
-      "\n\007NSCOUNT\030\014 \001(\005\022\017\n\007ARCOUNT\030\r \001(\005\0328\n\010Ques" +
-      "tion\022\r\n\005QNAME\030\001 \001(\t\022\r\n\005QTYPE\030\002 \001(\t\022\016\n\006QC" +
-      "LASS\030\003 \001(\t\032@\n\006Answer\022\014\n\004NAME\030\001 \001(\t\022\014\n\004TY" +
-      "PE\030\002 \001(\t\022\r\n\005CLASS\030\003 \001(\t\022\013\n\003TTL\030\004 \001(\005\032C\n\t" +
-      "Authority\022\014\n\004NAME\030\001 \001(\t\022\014\n\004TYPE\030\002 \001(\t\022\r\n",
-      "\005CLASS\030\003 \001(\t\022\013\n\003TTL\030\004 \001(\005\032C\n\tAditional\022\014" +
-      "\n\004NAME\030\001 \001(\t\022\014\n\004TYPE\030\002 \001(\t\022\r\n\005CLASS\030\003 \001(" +
-      "\t\022\013\n\003TTL\030\004 \001(\005B\022B\020ProtosMessageDNS"
+      "\n\007NSCOUNT\030\014 \001(\005\022\017\n\007ARCOUNT\030\r \001(\005\0221\n\016QUES" +
+      "TION_FIELD\030\016 \001(\0132\031.core.MessageDNS.Quest" +
+      "ion\022-\n\014ANSWER_FIELD\030\017 \001(\0132\027.core.Message" +
+      "DNS.Answer\0223\n\017AUTHORITY_FIELD\030\020 \001(\0132\032.co" +
+      "re.MessageDNS.Authority\0223\n\017ADITIONAL_FIE",
+      "LD\030\021 \001(\0132\032.core.MessageDNS.Aditional\0328\n\010" +
+      "Question\022\r\n\005QNAME\030\001 \001(\t\022\r\n\005QTYPE\030\002 \001(\t\022\016" +
+      "\n\006QCLASS\030\003 \001(\t\032@\n\006Answer\022\014\n\004NAME\030\001 \001(\t\022\014" +
+      "\n\004TYPE\030\002 \001(\t\022\r\n\005CLASS\030\003 \001(\t\022\013\n\003TTL\030\004 \001(\005" +
+      "\032C\n\tAuthority\022\014\n\004NAME\030\001 \001(\t\022\014\n\004TYPE\030\002 \001(" +
+      "\t\022\r\n\005CLASS\030\003 \001(\t\022\013\n\003TTL\030\004 \001(\005\032C\n\tAdition" +
+      "al\022\014\n\004NAME\030\001 \001(\t\022\014\n\004TYPE\030\002 \001(\t\022\r\n\005CLASS\030" +
+      "\003 \001(\t\022\013\n\003TTL\030\004 \001(\005B\022B\020ProtosMessageDNS"
     };
-    Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public ExtensionRegistry assignDescriptors(
-              Descriptors.FileDescriptor root) {
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
     internal_static_core_MessageDNS_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_core_MessageDNS_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_descriptor,
         new java.lang.String[] { });
     internal_static_core_MessageDNS_Header_descriptor =
       internal_static_core_MessageDNS_descriptor.getNestedTypes().get(0);
     internal_static_core_MessageDNS_Header_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_Header_descriptor,
-        new java.lang.String[] { "Id", "QR", "Opcode", "AA", "TC", "RD", "RA", "Z", "RCODE", "QDCOUNT", "ANCOUNT", "NSCOUNT", "ARCOUNT", });
+        new java.lang.String[] { "Id", "QR", "Opcode", "AA", "TC", "RD", "RA", "Z", "RCODE", "QDCOUNT", "ANCOUNT", "NSCOUNT", "ARCOUNT", "QUESTIONFIELD", "ANSWERFIELD", "AUTHORITYFIELD", "ADITIONALFIELD", });
     internal_static_core_MessageDNS_Question_descriptor =
       internal_static_core_MessageDNS_descriptor.getNestedTypes().get(1);
     internal_static_core_MessageDNS_Question_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_Question_descriptor,
         new java.lang.String[] { "QNAME", "QTYPE", "QCLASS", });
     internal_static_core_MessageDNS_Answer_descriptor =
       internal_static_core_MessageDNS_descriptor.getNestedTypes().get(2);
     internal_static_core_MessageDNS_Answer_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_Answer_descriptor,
         new java.lang.String[] { "NAME", "TYPE", "CLASS", "TTL", });
     internal_static_core_MessageDNS_Authority_descriptor =
       internal_static_core_MessageDNS_descriptor.getNestedTypes().get(3);
     internal_static_core_MessageDNS_Authority_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_Authority_descriptor,
         new java.lang.String[] { "NAME", "TYPE", "CLASS", "TTL", });
     internal_static_core_MessageDNS_Aditional_descriptor =
       internal_static_core_MessageDNS_descriptor.getNestedTypes().get(4);
     internal_static_core_MessageDNS_Aditional_fieldAccessorTable = new
-      GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_core_MessageDNS_Aditional_descriptor,
         new java.lang.String[] { "NAME", "TYPE", "CLASS", "TTL", });
   }

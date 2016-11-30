@@ -66,8 +66,7 @@ public class Main {
     		Header HeaderDNS = MessageDNS.Header.parseFrom(receivebyte);
     		Answer AnswerDNS = HeaderDNS.getANSWERFIELD();
     		levelOfDomain = HeaderDNS.getId();
-    		domain = AnswerDNS.getNAME();
-    		System.out.println("<- port: "+ port + " address: " + addressIP + " receive: " + " level of domain - "+ levelOfDomain + " message - " + domain);
+    		System.out.println("<- port: "+ port + " address: " + addressIP + " receive: " + " level of domain - "+ levelOfDomain + " message - " + AnswerDNS.getNAME());
     	} catch (InvalidProtocolBufferException e1) {
     		e1.printStackTrace();
     	}

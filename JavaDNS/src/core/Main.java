@@ -36,7 +36,6 @@ public class Main {
     			if(!correctAddress(domain.trim())) {
     				levelOfDomain = 0;
     				domain = "Address is incorrect";
-                    //fullMsg();
     			} else
                     
     			switch(levelOfDomain) {
@@ -59,7 +58,17 @@ public class Main {
                                 
                     	if(!exist) {
                     		throw new Exception("404 not found");
-                    	} else levelOfDomain++;
+                    	} else {
+                    		levelOfDomain++;
+                    		
+                    		File file2 = new File("adresses/" + getDomain().trim() + ".json");
+                        	scanner = new Scanner(file2);
+                        	json = "";
+                        	while(scanner.hasNext())
+                        		json += scanner.next();
+                        	JSONObject obj2 = new JSONObject(json);
+                        	domain = obj2.getString("ip");
+                    	}
                     } catch (Exception e) {
                     	e.printStackTrace();
                         levelOfDomain = 0;
@@ -86,7 +95,17 @@ public class Main {
                 		scanner.close();
                 		if(!exist) {
                 			throw new Exception("404 not found");
-                			} else levelOfDomain++;
+                			} else {
+                        		levelOfDomain++;
+                        		
+                        		File file2 = new File("adresses/" + getNameOfSite().trim() + ".json");
+                            	scanner = new Scanner(file2);
+                            	json = "";
+                            	while(scanner.hasNext())
+                            		json += scanner.next();
+                            	JSONObject obj2 = new JSONObject(json);
+                            	domain = obj2.getString("ip");
+                        	}
                 	} catch (Exception e) {
                 		e.printStackTrace();
                         levelOfDomain = 0;
@@ -146,7 +165,6 @@ public class Main {
     	MessageDNS.Answer.Builder AnswerDNS = MessageDNS.Answer.newBuilder().setNAME(domain).setTYPE("answer").setCLASS("answer").setTTL(0);
     	HeaderDNS.setId(levelOfDomain).setANSWERFIELD(AnswerDNS);
     	byte[] bytes = HeaderDNS.build().toByteArray();
-    	System.out.println("wys³ano: " + bytes.length); //!!!
     	DatagramPacket sender = new DatagramPacket(bytes, bytes.length, addr, port);
     	server.send(sender);
     	System.out.println("-> port: " + port + " address: "+ addr + " send: " + " level of domain - " + HeaderDNS.getId() + " message - " + AnswerDNS.getNAME());

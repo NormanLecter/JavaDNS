@@ -5,4 +5,3 @@ lukasz.maksymilian.wolniak@gmail.com</br>
 grzegorzosak@gmail.com</br>
 </br>
 Trello : https://trello.com/b/1opb92Qh/javadns</br>
-made with SRUM technique
